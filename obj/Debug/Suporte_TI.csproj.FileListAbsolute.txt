@@ -1,0 +1,17 @@
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI.exe.config
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI.exe
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI.pdb
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.csproj.AssemblyReference.cache
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Form1.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Properties.Resources.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.csproj.GenerateResource.cache
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.csproj.CoreCompileInputs.cache
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.exe
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.pdb
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Chamado.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.Bson.xml
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.csproj.Up2Date
