@@ -15,3 +15,4 @@ C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.Bson.pdb
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Newtonsoft.Json.Bson.xml
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.csproj.Up2Date
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.SplashScreen.resources

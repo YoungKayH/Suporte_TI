@@ -17,6 +17,12 @@ namespace Suporte_TI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Mostra splash e espera ele se fechar
+            SplashScreen splash = new SplashScreen();
+            splash.ShowDialog();
+
+
             Application.Run(new Form1());
         }
     }
