@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Suporte_TI.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,15 +29,21 @@ namespace Suporte_TI
             string nomeDigitado = txtLogin.Text;
             string senhaDigitada = txtSenha.Text;
 
-            string usuarioCadastrado = "a";
-            string senhaCadastrada = "1";
-
-            if (nomeDigitado.Equals(usuarioCadastrado) &&  senhaDigitada.Equals(senhaCadastrada)) 
+            Usuario usuarioCadastrado = new Usuario
             {
-                MessageBox.Show("Nome cadastrado: " + nomeDigitado);
-                Chamado chamado = new Chamado();
+                Login = "a",
+                Senha = "1",
+                Nivel = 1 // Se quiser usar nível depois para gerente ou normal
+            };
+
+            //string usuarioCadastrado = "a";
+            //string senhaCadastrada = "1";
+
+            if (nomeDigitado == usuarioCadastrado.Login && senhaDigitada == usuarioCadastrado.Senha)
+            {
+                Menu chamado = new Menu();
                 chamado.Show();
-                this.Hide(); // ou this.Hide() se não quiser fechar
+                this.Hide(); // ou this.Close() se quiser fechar
                 
             }
             else if (string.IsNullOrWhiteSpace(nomeDigitado) || string.IsNullOrWhiteSpace(senhaDigitada))
@@ -48,10 +55,11 @@ namespace Suporte_TI
             }
             else
             {
-                MessageBox.Show("Senha incorreta!");
+                MessageBox.Show("Senha ou login incorretos!",
+                        "Erro de Login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
             }
-            
         }
     }
 }
-//nomeDigitado != null senhaDigitada != null &&

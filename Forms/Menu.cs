@@ -12,9 +12,9 @@ using Newtonsoft.Json;
 
 namespace Suporte_TI
 {
-    public partial class Chamado : Form
+    public partial class Menu : Form
     {
-        public Chamado()
+        public Menu()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

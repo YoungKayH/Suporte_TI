@@ -75,6 +75,7 @@
             this.ClientSize = new System.Drawing.Size(245, 241);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SplashScreen";
             this.Text = "SplashScreen";
             this.Load += new System.EventHandler(this.SplashScreen_Load);
