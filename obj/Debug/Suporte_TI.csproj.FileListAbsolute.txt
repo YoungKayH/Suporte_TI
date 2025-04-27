@@ -16,3 +16,6 @@ C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.csproj.Up
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Form1.resources
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.SplashScreen.resources
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Menu.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.Painel.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.ChamadoForm.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.NovoChamadoForm.resources

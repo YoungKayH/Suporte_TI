@@ -9,57 +9,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using Suporte_TI.Forms;
 
 namespace Suporte_TI
 {
+    
+
     public partial class Menu : Form
     {
+        private Form formularioAtivo = null;
         public Menu()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-
-        private async void button1_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
-            string url = "http://127.0.0.1:5000/prever";
-
-            // Captura o texto digitado pelo usuário no TextBox
-            string chamadoTexto = txtChamado.Text;
-
-            // Verifica se está vazio
-            if (string.IsNullOrWhiteSpace(chamadoTexto))
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close();
+        }
+        
+        private void btnPainel_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioFilho(new Painel());
+        }
+        private void AbrirFormularioFilho(Form formularioFilho)
+        {
+            if (formularioAtivo != null)
             {
-                MessageBox.Show("Digite um chamado antes de enviar.");
-                return;
+                formularioAtivo.Close();
             }
 
-            var chamado = new { chamado = chamadoTexto };
-            string json = JsonConvert.SerializeObject(chamado);
-            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    HttpResponseMessage response = await client.PostAsync(url, content);
-                    string resposta = await response.Content.ReadAsStringAsync();
-
-                    // Mostra a resposta da API no label
-                    lblResposta.Text = "Resposta da API: " + resposta;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao conectar com a API: " + ex.Message);
-                }
-            }
+            formularioAtivo = formularioFilho;
+            formularioFilho.TopLevel = false;
+            formularioFilho.FormBorderStyle = FormBorderStyle.None;
+            formularioFilho.Dock = DockStyle.Fill;
+            panelConteudo.Controls.Add(formularioFilho);
+            panelConteudo.Tag = formularioFilho;
+            formularioFilho.BringToFront();
+            formularioFilho.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSeuchamado_Click(object sender, EventArgs e)
         {
-            Form1 login = new Form1();
-            login.Show();
-            this.Close(); // ou this.Hide() se não quiser fechar
+            AbrirFormularioFilho(new ChamadoForm());
+        }
+
+        private void btnNovochamado_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioFilho(new NovoChamadoForm());
         }
     }
 }

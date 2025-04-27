@@ -78,6 +78,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(229, 32);
             this.txtSenha.TabIndex = 4;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -85,9 +86,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label4.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(195)))), ((int)(((byte)(247)))));
-            this.label4.Location = new System.Drawing.Point(183, 21);
+            this.label4.Location = new System.Drawing.Point(183, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(287, 51);
+            this.label4.Size = new System.Drawing.Size(284, 49);
             this.label4.TabIndex = 7;
             this.label4.Text = "FTR SoluTech";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;

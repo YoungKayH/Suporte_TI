@@ -29,130 +29,136 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtChamado = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblResposta = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPainel = new System.Windows.Forms.Button();
+            this.btnSeuchamado = new System.Windows.Forms.Button();
+            this.btnNovochamado = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.panelConteudo = new System.Windows.Forms.Panel();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // panel1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(446, 177);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 240);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(260, 95);
+            this.panel1.TabIndex = 4;
             // 
-            // button1
+            // panel2
             // 
-            this.button1.Location = new System.Drawing.Point(653, 394);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Abrir chamado";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.panel2.Location = new System.Drawing.Point(260, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(776, 72);
+            this.panel2.TabIndex = 5;
             // 
-            // button2
+            // panel3
             // 
-            this.button2.Location = new System.Drawing.Point(12, 394);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Sair";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.panel3.Controls.Add(this.btnSair);
+            this.panel3.Controls.Add(this.btnNovochamado);
+            this.panel3.Controls.Add(this.btnSeuchamado);
+            this.panel3.Controls.Add(this.btnPainel);
+            this.panel3.Location = new System.Drawing.Point(2, 92);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(260, 359);
+            this.panel3.TabIndex = 6;
             // 
-            // txtChamado
+            // btnPainel
             // 
-            this.txtChamado.Location = new System.Drawing.Point(305, 149);
-            this.txtChamado.Name = "txtChamado";
-            this.txtChamado.Size = new System.Drawing.Size(366, 22);
-            this.txtChamado.TabIndex = 3;
+            this.btnPainel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPainel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(195)))), ((int)(((byte)(247)))));
+            this.btnPainel.Image = ((System.Drawing.Image)(resources.GetObject("btnPainel.Image")));
+            this.btnPainel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPainel.Location = new System.Drawing.Point(0, 0);
+            this.btnPainel.Name = "btnPainel";
+            this.btnPainel.Size = new System.Drawing.Size(260, 85);
+            this.btnPainel.TabIndex = 0;
+            this.btnPainel.Text = "Painel";
+            this.btnPainel.UseVisualStyleBackColor = true;
+            this.btnPainel.Click += new System.EventHandler(this.btnPainel_Click);
             // 
-            // label1
+            // btnSeuchamado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(482, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Digite o problema abaxio";
+            this.btnSeuchamado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeuchamado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(195)))), ((int)(((byte)(247)))));
+            this.btnSeuchamado.Image = ((System.Drawing.Image)(resources.GetObject("btnSeuchamado.Image")));
+            this.btnSeuchamado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeuchamado.Location = new System.Drawing.Point(0, 91);
+            this.btnSeuchamado.Name = "btnSeuchamado";
+            this.btnSeuchamado.Size = new System.Drawing.Size(260, 89);
+            this.btnSeuchamado.TabIndex = 1;
+            this.btnSeuchamado.Text = "Seus chamados";
+            this.btnSeuchamado.UseVisualStyleBackColor = true;
+            this.btnSeuchamado.Click += new System.EventHandler(this.btnSeuchamado_Click);
             // 
-            // lblResposta
+            // btnNovochamado
             // 
-            this.lblResposta.AutoSize = true;
-            this.lblResposta.Location = new System.Drawing.Point(338, 293);
-            this.lblResposta.Name = "lblResposta";
-            this.lblResposta.Size = new System.Drawing.Size(0, 16);
-            this.lblResposta.TabIndex = 5;
+            this.btnNovochamado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovochamado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(195)))), ((int)(((byte)(247)))));
+            this.btnNovochamado.Image = ((System.Drawing.Image)(resources.GetObject("btnNovochamado.Image")));
+            this.btnNovochamado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovochamado.Location = new System.Drawing.Point(0, 186);
+            this.btnNovochamado.Name = "btnNovochamado";
+            this.btnNovochamado.Size = new System.Drawing.Size(260, 80);
+            this.btnNovochamado.TabIndex = 2;
+            this.btnNovochamado.Text = "Novo chamado";
+            this.btnNovochamado.UseVisualStyleBackColor = true;
+            this.btnNovochamado.Click += new System.EventHandler(this.btnNovochamado_Click);
             // 
-            // label2
+            // btnSair
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Nome";
+            this.btnSair.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(195)))), ((int)(((byte)(247)))));
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(0, 272);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(260, 85);
+            this.btnSair.TabIndex = 3;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // label3
+            // panelConteudo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Setor";
+            this.panelConteudo.Location = new System.Drawing.Point(260, 66);
+            this.panelConteudo.Name = "panelConteudo";
+            this.panelConteudo.Size = new System.Drawing.Size(776, 458);
+            this.panelConteudo.TabIndex = 7;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "L";
-            // 
-            // Chamado
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblResposta);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtChamado);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Chamado";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ClientSize = new System.Drawing.Size(1040, 536);
+            this.Controls.Add(this.panelConteudo);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
+            this.Name = "Menu";
             this.Text = "Suporte";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtChamado;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblResposta;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnPainel;
+        private System.Windows.Forms.Button btnSeuchamado;
+        private System.Windows.Forms.Button btnNovochamado;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Panel panelConteudo;
     }
 }

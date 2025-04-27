@@ -40,6 +40,7 @@
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.3\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ChamadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChamadoForm.Designer.cs">
+      <DependentUpon>ChamadoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +71,24 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NovoChamadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NovoChamadoForm.Designer.cs">
+      <DependentUpon>NovoChamadoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Painel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Painel.Designer.cs">
+      <DependentUpon>Painel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\softwareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\softwareForm.Designer.cs">
+      <DependentUpon>softwareForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Chamado.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />
@@ -74,11 +99,20 @@
     <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ChamadoForm.resx">
+      <DependentUpon>ChamadoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NovoChamadoForm.resx">
+      <DependentUpon>NovoChamadoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Painel.resx">
+      <DependentUpon>Painel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,7 +142,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Utils\Cliente.png" />
+    <Content Include="Utils\download-_5_.ico" />
+    <Content Include="Utils\ezgif.com-reverse.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

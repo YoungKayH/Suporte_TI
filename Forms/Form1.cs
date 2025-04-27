@@ -34,6 +34,7 @@ namespace Suporte_TI
                 Login = "a",
                 Senha = "1",
                 Nivel = 1 // Se quiser usar nível depois para gerente ou normal
+                // 0 = normal, 1 = gerente
             };
 
             //string usuarioCadastrado = "a";
