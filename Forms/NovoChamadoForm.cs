@@ -16,5 +16,18 @@ namespace Suporte_TI.Forms
         {
             InitializeComponent();
         }
+
+        private void txtChamado_Click(object sender, EventArgs e)
+        {
+            txtChamado.Clear();
+        }
+
+        private void txtChamado_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtChamado.Text))
+            {
+                txtChamado.Text = "descreva seu problema aqui...";
+            }
+        }
     }
 }

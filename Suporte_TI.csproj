@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,12 @@
     </Compile>
     <Compile Include="Forms\ChamadoForm.Designer.cs">
       <DependentUpon>ChamadoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IAForm.Designer.cs">
+      <DependentUpon>IAForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Menu.cs">
       <SubType>Form</SubType>
@@ -147,9 +154,12 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Utils\Cliente.png" />
+    <Content Include="Utils\Cliente_Resize.png" />
     <Content Include="Utils\download-_5_.ico" />
     <Content Include="Utils\ezgif.com-reverse.gif" />
+    <Content Include="Utils\IA_png.png" />
+    <Content Include="Utils\Sair_resize.png" />
+    <Content Include="Utils\Suporte_resize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
