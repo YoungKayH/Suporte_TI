@@ -1,8 +1,11 @@
-﻿using Suporte_TI.Models;
+﻿using Npgsql;
+using Suporte_TI.Forms;
+using Suporte_TI.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,40 +29,61 @@ namespace Suporte_TI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string nomeDigitado = txtLogin.Text;
-            string senhaDigitada = txtSenha.Text;
+            string nomeDigitado = txtLogin.Text.Trim();
+            string senhaDigitada = txtSenha.Text.Trim();
 
-            Usuario usuarioCadastrado = new Usuario
-            {
-                Login = "a",
-                Senha = "1",
-                Nivel = 1 // Se quiser usar nível depois para gerente ou normal
-                // 0 = normal, 1 = gerente
-            };
-
-            //string usuarioCadastrado = "a";
-            //string senhaCadastrada = "1";
-
-            if (nomeDigitado == usuarioCadastrado.Login && senhaDigitada == usuarioCadastrado.Senha)
-            {
-                Menu chamado = new Menu();
-                chamado.Show();
-                this.Hide(); // ou this.Close() se quiser fechar
-                
-            }
-            else if (string.IsNullOrWhiteSpace(nomeDigitado) || string.IsNullOrWhiteSpace(senhaDigitada))
+            if (string.IsNullOrWhiteSpace(nomeDigitado) || string.IsNullOrWhiteSpace(senhaDigitada))
             {
                 MessageBox.Show("Por favor insira os dados de login!",
                                 "Campos sem dados",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
+                return;
             }
-            else
+            CadastroUsu desc = new CadastroUsu();
+            string senhaHash = desc.CriptografarSenha(txtSenha.Text);
+
+            try
             {
-                MessageBox.Show("Senha ou login incorretos!",
-                        "Erro de Login",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                using (var conexao = new NpgsqlConnection("Host=localhost;Username=postgres;Password=2005;Database=suporte_ti"))
+                {
+                    conexao.Open();
+
+                    string sql = "SELECT usu_id, usu_nome, usu_senha, tipo_id FROM usuarios WHERE usu_nome = @nome AND usu_senha = @senha";
+
+                    using (var cmd = new NpgsqlCommand(sql, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("nome", nomeDigitado);
+                        cmd.Parameters.AddWithValue("senha", senhaHash);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int tipoId = reader.GetInt32(reader.GetOrdinal("tipo_id"));
+
+                                // Login bem-sucedido
+                                Menu menu = new Menu();
+                                menu.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuario ou senha incorretos!",
+                                                "Erro de Login",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao conectar no banco: {ex.Message}",
+                                "Erro",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }

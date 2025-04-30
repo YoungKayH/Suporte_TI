@@ -35,6 +35,7 @@
             this.checkUrgente = new System.Windows.Forms.CheckBox();
             this.txtChamado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnEnviar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -112,12 +113,24 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Descrição do Problema";
             // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.Location = new System.Drawing.Point(655, 442);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(92, 44);
+            this.btnEnviar.TabIndex = 8;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
             // NovoChamadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(800, 543);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtChamado);
             this.Controls.Add(this.checkUrgente);
@@ -141,5 +154,6 @@
         private System.Windows.Forms.CheckBox checkUrgente;
         private System.Windows.Forms.TextBox txtChamado;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnEnviar;
     }
 }

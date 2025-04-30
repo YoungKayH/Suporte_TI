@@ -13,15 +13,19 @@ namespace Suporte_TI.Models
         public DateTime DataAbertura { get; set; }
         public DateTime? DataFechamento { get; set; }
         public string Status { get; set; }
-        public string UsuarioResponsavel { get; set; }
-        public Chamado(int id, string descricao, DateTime dataAbertura, DateTime? dataFechamento, string status, string usuarioResponsavel)
+        public int UsuarioId { get; set; }
+        public int CategoriaId { get; set; }
+        public int PrioridadeId { get; set; }
+        public Chamado(int id, string descricao, DateTime dataAbertura, DateTime? dataFechamento, string status, int usuarioId, int categoriaId, int prioridadeId)
         {
             Id = id;
             Descricao = descricao;
             DataAbertura = dataAbertura;
             DataFechamento = dataFechamento;
             Status = status;
-            UsuarioResponsavel = usuarioResponsavel;
+            UsuarioId = usuarioId;
+            CategoriaId = categoriaId;
+            PrioridadeId = prioridadeId;
         }
     }
 }

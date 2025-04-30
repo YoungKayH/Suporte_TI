@@ -60,5 +60,12 @@ namespace Suporte_TI
         {
             AbrirFormularioFilho(new NovoChamadoForm());
         }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            CadastroUsu cad = new CadastroUsu();
+            cad.Show();
+            this.Hide(); // ou this.Close() se quiser fechar    
+        }
     }
 }
