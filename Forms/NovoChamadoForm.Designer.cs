@@ -30,12 +30,10 @@
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBasico = new System.Windows.Forms.CheckBox();
-            this.checkImportante = new System.Windows.Forms.CheckBox();
-            this.checkUrgente = new System.Windows.Forms.CheckBox();
             this.txtChamado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
+            this.cbPrioridade = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -54,39 +52,6 @@
             this.label1.Size = new System.Drawing.Size(206, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Prioridade do Problema";
-            // 
-            // checkBasico
-            // 
-            this.checkBasico.AutoSize = true;
-            this.checkBasico.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBasico.Location = new System.Drawing.Point(15, 49);
-            this.checkBasico.Name = "checkBasico";
-            this.checkBasico.Size = new System.Drawing.Size(86, 25);
-            this.checkBasico.TabIndex = 3;
-            this.checkBasico.Text = "Básico";
-            this.checkBasico.UseVisualStyleBackColor = true;
-            // 
-            // checkImportante
-            // 
-            this.checkImportante.AutoSize = true;
-            this.checkImportante.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkImportante.Location = new System.Drawing.Point(15, 80);
-            this.checkImportante.Name = "checkImportante";
-            this.checkImportante.Size = new System.Drawing.Size(127, 25);
-            this.checkImportante.TabIndex = 4;
-            this.checkImportante.Text = "Importante";
-            this.checkImportante.UseVisualStyleBackColor = true;
-            // 
-            // checkUrgente
-            // 
-            this.checkUrgente.AutoSize = true;
-            this.checkUrgente.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkUrgente.Location = new System.Drawing.Point(15, 111);
-            this.checkUrgente.Name = "checkUrgente";
-            this.checkUrgente.Size = new System.Drawing.Size(99, 25);
-            this.checkUrgente.TabIndex = 5;
-            this.checkUrgente.Text = "Urgente";
-            this.checkUrgente.UseVisualStyleBackColor = true;
             // 
             // txtChamado
             // 
@@ -116,7 +81,7 @@
             // btnEnviar
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.Location = new System.Drawing.Point(655, 442);
+            this.btnEnviar.Location = new System.Drawing.Point(631, 437);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(92, 44);
             this.btnEnviar.TabIndex = 8;
@@ -124,18 +89,24 @@
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
+            // cbPrioridade
+            // 
+            this.cbPrioridade.FormattingEnabled = true;
+            this.cbPrioridade.Location = new System.Drawing.Point(15, 72);
+            this.cbPrioridade.Name = "cbPrioridade";
+            this.cbPrioridade.Size = new System.Drawing.Size(202, 24);
+            this.cbPrioridade.TabIndex = 9;
+            // 
             // NovoChamadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(800, 543);
+            this.Controls.Add(this.cbPrioridade);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtChamado);
-            this.Controls.Add(this.checkUrgente);
-            this.Controls.Add(this.checkImportante);
-            this.Controls.Add(this.checkBasico);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "NovoChamadoForm";
@@ -149,11 +120,9 @@
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBasico;
-        private System.Windows.Forms.CheckBox checkImportante;
-        private System.Windows.Forms.CheckBox checkUrgente;
         private System.Windows.Forms.TextBox txtChamado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.ComboBox cbPrioridade;
     }
 }

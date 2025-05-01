@@ -42,3 +42,4 @@ C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\System.Threading.Cha
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\System.ValueTuple.xml
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.CadastroUsu.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.ChatChamado.resources

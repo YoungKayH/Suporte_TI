@@ -56,11 +56,21 @@ namespace Suporte_TI
                         cmd.Parameters.AddWithValue("nome", nomeDigitado);
                         cmd.Parameters.AddWithValue("senha", senhaHash);
 
+
                         using (var reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                                int id = reader.GetInt32(reader.GetOrdinal("usu_id"));
+                                string nome = reader.GetString(reader.GetOrdinal("usu_nome"));
                                 int tipoId = reader.GetInt32(reader.GetOrdinal("tipo_id"));
+
+                                SessaoUsuario.UsuarioLogado = new Usuario
+                                {
+                                    Id = id,
+                                    nome = nome,
+                                    tipoId = tipoId
+                                };
 
                                 // Login bem-sucedido
                                 Menu menu = new Menu();
@@ -88,3 +98,4 @@ namespace Suporte_TI
         }
     }
 }
+

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Suporte_TI.Forms
 {
-    public partial class CadastroUsu : Form1
+    public partial class CadastroUsu : Form
     {
         public CadastroUsu()
         {

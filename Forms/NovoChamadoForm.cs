@@ -18,6 +18,13 @@ namespace Suporte_TI.Forms
         public NovoChamadoForm()
         {
             InitializeComponent();
+
+            //Itens do ComboBox
+            cbPrioridade.Items.Add("Normal");
+            cbPrioridade.Items.Add("Urgente");
+            cbPrioridade.Items.Add("Critico");
+
+            cbPrioridade.SelectedIndex = 0;
         }
 
         private void txtChamado_Click(object sender, EventArgs e)
@@ -48,8 +55,8 @@ namespace Suporte_TI.Forms
             int usuarioId = SessaoUsuario.UsuarioLogado.Id;
 
             // Ajuste conforme o ID padrão das categorias e prioridades
-            int categoriaId = 1; // Exemplo: Categoria padrão
-            int prioridadeId = 1; // Exemplo: Prioridade padrão
+            //int categoriaId = 1; // Exemplo: Categoria padrão
+            int prioridadeId = cbPrioridade.SelectedIndex + 1; // Exemplo: Prioridade padrão
 
             // Conexão com PostgreSQL
             string connStr = "Host=localhost;Username=postgres;Password=2005;Database=suporte_ti";
@@ -58,16 +65,18 @@ namespace Suporte_TI.Forms
             {
                 conn.Open();
 
-                string sql = @"INSERT INTO chamados (cham_data, cham_detalhe, cham_status, usu_id, cat_id, pri_id) 
-                       VALUES (@data, @detalhe, 'ABERTO', @usuarioId, @catId, @priId)";
+                string sql = @"INSERT INTO chamados (cham_data, cham_detalhe, cham_status, usu_id, pri_id) 
+                       VALUES (@data, @detalhe, 'ABERTO', @usuarioId, @priId)";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("data", dataAtual.Date); // apenas a data
                     cmd.Parameters.AddWithValue("detalhe", descricao);
                     cmd.Parameters.AddWithValue("usuarioId", usuarioId);
-                    cmd.Parameters.AddWithValue("catId", categoriaId);
+                    //cmd.Parameters.AddWithValue("catId", categoriaId);
                     cmd.Parameters.AddWithValue("priId", prioridadeId);
+                   // cmd.Parameters.AddWithValue("priId", cbPrioridade.SelectedIndex > -1 ?
+                   // (object)cbPrioridade.SelectedValue : DBNull.Value);
 
                     try
                     {

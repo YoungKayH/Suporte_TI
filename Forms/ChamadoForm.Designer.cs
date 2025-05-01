@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.flowLayoutChamados = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // flowLayoutChamados
+            // 
+            this.flowLayoutChamados.AutoScroll = true;
+            this.flowLayoutChamados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutChamados.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutChamados.Name = "flowLayoutChamados";
+            this.flowLayoutChamados.Size = new System.Drawing.Size(800, 450);
+            this.flowLayoutChamados.TabIndex = 0;
             // 
             // ChamadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.flowLayoutChamados);
             this.Name = "ChamadoForm";
             this.Text = "ChamadoForm";
             this.ResumeLayout(false);
@@ -42,5 +53,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutChamados;
     }
 }
