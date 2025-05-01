@@ -25,10 +25,18 @@ namespace Suporte_TI.Forms
             {
                 conn.Open();
 
-                string sql = @"SELECT cham_id, cham_data, cham_detalhe, cham_status 
-                               FROM chamados 
-                               WHERE usu_id = @usuId AND cham_status = 'ABERTO'
-                               ORDER BY cham_data DESC";
+                string sql = @"SELECT c.cham_id, c.cham_data, c.cham_detalhe, c.cham_status, p.pri_nome
+                             FROM chamados c
+                             JOIN prioridades p ON c.pri_id = p.pri_id
+                             WHERE c.usu_id = @usuId AND c.cham_status = 'ABERTO'
+                             ORDER BY 
+                             CASE p.pri_nome
+                                WHEN 'Crítico' THEN 1
+                                WHEN 'Urgente' THEN 2
+                                WHEN 'Normal' THEN 3
+                                ELSE 4
+                             END,
+                            c.cham_data DESC";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -36,26 +44,42 @@ namespace Suporte_TI.Forms
 
                     using (var reader = cmd.ExecuteReader())
                     {
+                        bool temChamados = false;
+
                         while (reader.Read())
                         {
                             int id = reader.GetInt32(0);
                             DateTime data = reader.GetDateTime(1);
                             string detalhe = reader.GetString(2);
                             string status = reader.GetString(3);
+                            string prioridade = reader.GetString(4);
 
-                            flowLayoutChamados.Controls.Add(CriarCartaoChamado(id, data, detalhe, status));
+                            flowLayoutChamados.Controls.Add(CriarCartaoChamado(id, data, detalhe, status, prioridade));
+                        }
+                        if (!temChamados)
+                        {
+                            var lblVazio = new Label
+                            {
+                                Text = "Nenhum chamado aberto.",
+                                AutoSize = true,
+                                Font = new Font("Segoe UI", 12, FontStyle.Italic),
+                                ForeColor = Color.Gray,
+                                Margin = new Padding(10),
+                                Padding = new Padding(10)
+                            };
+                            flowLayoutChamados.Controls.Add(lblVazio);
                         }
                     }
                 }
             }
         }
 
-        private Panel CriarCartaoChamado(int id, DateTime data, string detalhe, string status)
+        private Panel CriarCartaoChamado(int id, DateTime data, string detalhe, string status, string prioridade)
         {
             var panel = new Panel
             {
                 Width = 500,
-                Height = 100,
+                Height = 120,
                 BorderStyle = BorderStyle.FixedSingle,
                 BackColor = Color.White,
                 Margin = new Padding(10)
@@ -69,17 +93,26 @@ namespace Suporte_TI.Forms
                 AutoSize = true
             };
 
+            var lblPrioridade = new Label
+            {
+                Text = $"Prioridade: {prioridade}",
+                Font = new Font("Segoe UI", 9, FontStyle.Italic),
+                ForeColor = Color.DarkRed,
+                Location = new Point(10, 30),
+                AutoSize = true
+            };
+
             var lblDetalhe = new Label
             {
                 Text = detalhe.Length > 100 ? detalhe.Substring(0, 100) + "..." : detalhe,
-                Location = new Point(10, 35),
+                Location = new Point(10, 50),
                 Size = new Size(350, 40)
             };
 
             var btnAbrir = new Button
             {
                 Text = "Abrir Chat",
-                Location = new Point(370, 30),
+                Location = new Point(370, 40),
                 Size = new Size(100, 30)
             };
             btnAbrir.Click += (s, e) =>
@@ -89,7 +122,6 @@ namespace Suporte_TI.Forms
                 chatForm.FormBorderStyle = FormBorderStyle.None;
                 chatForm.Dock = DockStyle.Fill;
 
-                // Se estiver usando um Panel central (como em MDI)
                 var parentForm = this.Parent as Panel;
                 parentForm.Controls.Clear();
                 parentForm.Controls.Add(chatForm);
@@ -97,10 +129,12 @@ namespace Suporte_TI.Forms
             };
 
             panel.Controls.Add(lblId);
+            panel.Controls.Add(lblPrioridade);
             panel.Controls.Add(lblDetalhe);
             panel.Controls.Add(btnAbrir);
 
             return panel;
         }
+
     }
 }

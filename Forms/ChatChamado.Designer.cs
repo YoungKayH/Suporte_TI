@@ -32,6 +32,7 @@
             this.btnEnviar = new System.Windows.Forms.Button();
             this.txtMensagem = new System.Windows.Forms.TextBox();
             this.lblTituloChamado = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listMensagens
@@ -45,9 +46,9 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(450, 351);
+            this.btnEnviar.Location = new System.Drawing.Point(570, 355);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(105, 42);
+            this.btnEnviar.Size = new System.Drawing.Size(105, 41);
             this.btnEnviar.TabIndex = 1;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
@@ -57,7 +58,7 @@
             // 
             this.txtMensagem.Location = new System.Drawing.Point(410, 281);
             this.txtMensagem.Name = "txtMensagem";
-            this.txtMensagem.Size = new System.Drawing.Size(192, 22);
+            this.txtMensagem.Size = new System.Drawing.Size(265, 22);
             this.txtMensagem.TabIndex = 2;
             // 
             // lblTituloChamado
@@ -69,11 +70,22 @@
             this.lblTituloChamado.TabIndex = 3;
             this.lblTituloChamado.Text = "label1";
             // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(410, 355);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(129, 41);
+            this.btnFechar.TabIndex = 4;
+            this.btnFechar.Text = "Fechar chamado";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // ChatChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.lblTituloChamado);
             this.Controls.Add(this.txtMensagem);
             this.Controls.Add(this.btnEnviar);
@@ -91,5 +103,6 @@
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.TextBox txtMensagem;
         private System.Windows.Forms.Label lblTituloChamado;
+        private System.Windows.Forms.Button btnFechar;
     }
 }

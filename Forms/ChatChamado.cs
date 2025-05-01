@@ -92,5 +92,32 @@ namespace Suporte_TI.Forms
             txtMensagem.Clear();
             CarregarMensagens();
         }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show("Tem certeza que deseja fechar este chamado?",
+                                    "Fechar Chamado",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                using (var conn = new NpgsqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string sql = "UPDATE chamados SET cham_status = 'FECHADO' WHERE cham_id = @id";
+
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("id", chamadoId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Chamado fechado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close(); // Fecha o formulário do chat
+            }
+        }
     }
 }
