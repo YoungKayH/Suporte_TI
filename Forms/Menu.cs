@@ -67,5 +67,18 @@ namespace Suporte_TI
             cad.Show();
             this.Hide(); // ou this.Close() se quiser fechar    
         }
+
+        private void btnIA_Click(object sender, EventArgs e)
+        {
+            IAForm iaForm = new IAForm();
+            iaForm.TopLevel = false;
+            iaForm.FormBorderStyle = FormBorderStyle.None;
+            iaForm.Dock = DockStyle.Fill;
+
+            panelConteudo.Controls.Clear(); // nome correto do painel
+            panelConteudo.Controls.Add(iaForm);
+            iaForm.Show();
+        }
+
     }
 }

@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCadastro = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnIA = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.btnSeuchamado = new System.Windows.Forms.Button();
             this.btnPainel = new System.Windows.Forms.Button();
             this.panelConteudo = new System.Windows.Forms.Panel();
-            this.btnCadastro = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,6 +74,16 @@
             this.panel2.Size = new System.Drawing.Size(780, 72);
             this.panel2.TabIndex = 5;
             // 
+            // btnCadastro
+            // 
+            this.btnCadastro.Location = new System.Drawing.Point(35, 15);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(202, 51);
+            this.btnCadastro.TabIndex = 0;
+            this.btnCadastro.Text = "Cadastro";
+            this.btnCadastro.UseVisualStyleBackColor = true;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -100,6 +110,7 @@
             this.btnIA.Text = "Conversar com a IA";
             this.btnIA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIA.UseVisualStyleBackColor = true;
+            this.btnIA.Click += new System.EventHandler(this.btnIA_Click);
             // 
             // btnSair
             // 
@@ -165,16 +176,6 @@
             this.panelConteudo.Name = "panelConteudo";
             this.panelConteudo.Size = new System.Drawing.Size(780, 470);
             this.panelConteudo.TabIndex = 7;
-            // 
-            // btnCadastro
-            // 
-            this.btnCadastro.Location = new System.Drawing.Point(35, 15);
-            this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(202, 51);
-            this.btnCadastro.TabIndex = 0;
-            this.btnCadastro.Text = "Cadastro";
-            this.btnCadastro.UseVisualStyleBackColor = true;
-            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // Menu
             // 

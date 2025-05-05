@@ -163,6 +163,9 @@
     <EmbeddedResource Include="Forms\ChatChamado.resx">
       <DependentUpon>ChatChamado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IAForm.resx">
+      <DependentUpon>IAForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
