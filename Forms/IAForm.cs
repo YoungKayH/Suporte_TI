@@ -93,7 +93,6 @@ namespace Suporte_TI.Forms
                 response.EnsureSuccessStatusCode();
 
                 var respostaJson = await response.Content.ReadAsStringAsync();
-                var resposta = JsonSerializer.Deserialize<RespostaIA>(respostaJson);
                 Console.WriteLine(respostaJson);  // Debug
 
                 // Desserializa o JSON para um objeto dinâmico
