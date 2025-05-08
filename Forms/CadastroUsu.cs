@@ -85,7 +85,7 @@ namespace Suporte_TI.Forms
                 //}
 
                 // Cadastrar no banco
-                string connectionString = "Host=localhost;Username=postgres;Password=2005;Database=suporte_ti";
+                string connectionString = "Host=localhost;Port=5432;Database=Chamados;Username=adminSA;Password=admin123";
 
                 using (var conn = new NpgsqlConnection(connectionString))
                 {

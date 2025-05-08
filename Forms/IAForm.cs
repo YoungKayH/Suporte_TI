@@ -96,9 +96,23 @@ namespace Suporte_TI.Forms
                 var resposta = JsonSerializer.Deserialize<RespostaIA>(respostaJson);
                 Console.WriteLine(respostaJson);  // Debug
 
-                txtResposta.Text = resposta?.choices?[0]?.message?.content ?? "Sem resposta.";
+                // Desserializa o JSON para um objeto dinâmico
+                dynamic resposta = Newtonsoft.Json.JsonConvert.DeserializeObject(respostaJson);
 
-                RegistrarUsoIA(pergunta, txtResposta.Text);
+                // Extrai a mensagem do JSON (considerando a estrutura fornecida)
+                string mensagem = resposta?.message ?? "Sem resposta.";
+
+                // Atualiza a UI na thread principal (se necessário)
+                if (txtResposta.InvokeRequired)
+                {
+                    txtResposta.Invoke(new Action(() => txtResposta.Text = mensagem));
+                }
+                else
+                {
+                    txtResposta.Text = mensagem;
+                }
+
+                RegistrarUsoIA(pergunta, mensagem);
             }
             catch (Exception ex)
             {

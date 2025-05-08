@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Const\Constants.cs" />
     <Compile Include="Data\DatabaseConnection.cs" />
     <Compile Include="Forms\CadastroUsu.cs">
       <SubType>Form</SubType>
@@ -214,6 +215,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SQL\Database.Create.sql" />
     <Content Include="Utils\Cliente_Resize.png" />
     <Content Include="Utils\download-_5_.ico" />
     <Content Include="Utils\ezgif.com-reverse.gif" />

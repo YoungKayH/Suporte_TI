@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Npgsql;
+using Suporte_TI.Data;
 using Suporte_TI.Models;
 
 namespace Suporte_TI.Forms
@@ -20,10 +21,10 @@ namespace Suporte_TI.Forms
         private void CarregarChamados()
         {
             flowLayoutChamados.Controls.Clear();
-
-            using (var conn = new NpgsqlConnection(connStr))
-            {
-                conn.Open();
+            
+                using (DatabaseConnection dbConnection = new DatabaseConnection())
+                {
+                var conn = dbConnection.GetConnection();
 
                 string sql = @"SELECT c.cham_id, c.cham_data, c.cham_detalhe, c.cham_status, p.pri_nome
                              FROM chamados c

@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Suporte_TI.Data;
+using Npgsql;
 using Suporte_TI.Forms;
 using Suporte_TI.Models;
 using System;
@@ -45,9 +46,10 @@ namespace Suporte_TI
 
             try
             {
-                using (var conexao = new NpgsqlConnection("Host=localhost;Username=postgres;Password=2005;Database=suporte_ti"))
+                using (DatabaseConnection dbConnection = new DatabaseConnection())
                 {
-                    conexao.Open();
+                    var conexao = dbConnection.GetConnection();
+                    Console.WriteLine("Conexão estabelecida com sucesso!");
 
                     string sql = "SELECT usu_id, usu_nome, usu_senha, tipo_id FROM usuarios WHERE usu_nome = @nome AND usu_senha = @senha";
 
