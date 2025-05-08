@@ -1,28 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
+using Suporte_TI.Const;
 
 namespace Suporte_TI.Data
 {
     internal class DatabaseConnection : IDisposable
     {
-        private readonly string _connectionString;
-        public DatabaseConnection(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
+        private readonly NpgsqlConnection _connection;
 
-        public void Dispose()
+        public DatabaseConnection()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connection = new NpgsqlConnection(Constants.Database.ConnectionUrl);
+                _connection.Open();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conectar ao banco de dados PostgreSQL: " + ex.Message);
+            }
         }
 
         public NpgsqlConnection GetConnection()
         {
-            return new NpgsqlConnection(_connectionString);
+            if (_connection.State != System.Data.ConnectionState.Open)
+            {
+                _connection.Open();
+            }
+            return _connection;
+        }
+
+        public void Dispose()
+        {
+            if (_connection != null && _connection.State == System.Data.ConnectionState.Open)
+            {
+                _connection.Close();
+                _connection.Dispose();
+            }
         }
     }
 }

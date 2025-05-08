@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using Suporte_TI.Data;
 using Suporte_TI.Models;
 
 
@@ -58,12 +59,10 @@ namespace Suporte_TI.Forms
             //int categoriaId = 1; // Exemplo: Categoria padrão
             int prioridadeId = cbPrioridade.SelectedIndex + 1; // Exemplo: Prioridade padrão
 
-            // Conexão com PostgreSQL
-            string connStr = "Host=localhost;Username=postgres;Password=2005;Database=suporte_ti";
 
-            using (var conn = new NpgsqlConnection(connStr))
+            using (DatabaseConnection dbConnection = new DatabaseConnection())
             {
-                conn.Open();
+                var conn = dbConnection.GetConnection();
 
                 string sql = @"INSERT INTO chamados (cham_data, cham_detalhe, cham_status, usu_id, pri_id) 
                        VALUES (@data, @detalhe, 'ABERTO', @usuarioId, @priId)";

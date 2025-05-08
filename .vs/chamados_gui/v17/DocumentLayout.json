@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workspace\\trampoFaculdade\\chamados_gui\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|c:\\workspace\\trampofaculdade\\chamados_gui\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\Form1.cs",
+              "RelativeDocumentMoniker": "Forms\\Form1.cs",
+              "ToolTip": "C:\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\Form1.cs",
+              "RelativeToolTip": "Forms\\Form1.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T03:15:43.77Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

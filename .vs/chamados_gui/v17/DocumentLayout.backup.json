@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|c:\\totvs\\workspace\\trampofaculdade\\chamados_gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|c:\\totvs\\workspace\\trampofaculdade\\chamados_gui\\forms\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:forms\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|c:\\totvs\\workspace\\trampofaculdade\\chamados_gui\\data\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:data\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|c:\\totvs\\workspace\\trampofaculdade\\chamados_gui\\forms\\cadastrousu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:forms\\cadastrousu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T23:48:09.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Forms\\Form1.Designer.cs",
+              "ToolTip": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\Form1.Designer.cs",
+              "RelativeToolTip": "Forms\\Form1.Designer.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T23:44:51.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseConnection.cs",
+              "DocumentMoniker": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Data\\DatabaseConnection.cs",
+              "RelativeDocumentMoniker": "Data\\DatabaseConnection.cs",
+              "ToolTip": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Data\\DatabaseConnection.cs",
+              "RelativeToolTip": "Data\\DatabaseConnection.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T23:44:41.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CadastroUsu.Designer.cs",
+              "DocumentMoniker": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\CadastroUsu.Designer.cs",
+              "RelativeDocumentMoniker": "Forms\\CadastroUsu.Designer.cs",
+              "ToolTip": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\CadastroUsu.Designer.cs",
+              "RelativeToolTip": "Forms\\CadastroUsu.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T23:44:14.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\Form1.cs",
+              "RelativeDocumentMoniker": "Forms\\Form1.cs",
+              "ToolTip": "C:\\TOTVS\\Workspace\\trampoFaculdade\\chamados_gui\\Forms\\Form1.cs [Design]",
+              "RelativeToolTip": "Forms\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T23:44:10.284Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
