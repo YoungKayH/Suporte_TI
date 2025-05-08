@@ -136,5 +136,9 @@ namespace Suporte_TI.Forms
             return panel;
         }
 
+        private void flowLayoutChamados_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

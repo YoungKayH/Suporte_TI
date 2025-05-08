@@ -44,3 +44,4 @@ C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\System.ValueTuple.xm
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.CadastroUsu.resources
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.ChatChamado.resources
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.IAForm.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.softwareForm.resources

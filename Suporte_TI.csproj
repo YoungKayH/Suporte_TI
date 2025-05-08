@@ -178,6 +178,9 @@
     <EmbeddedResource Include="Forms\Painel.resx">
       <DependentUpon>Painel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\softwareForm.resx">
+      <DependentUpon>softwareForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -16,5 +16,10 @@ namespace Suporte_TI.Forms
         {
             InitializeComponent();
         }
+
+        private void softwareForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

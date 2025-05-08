@@ -94,7 +94,7 @@ namespace Suporte_TI.Forms
 
                 var respostaJson = await response.Content.ReadAsStringAsync();
                 var resposta = JsonSerializer.Deserialize<RespostaIA>(respostaJson);
-                Console.WriteLine(respostaJson);  // Adicione para ver a resposta no console ou uma MessageBox para debug
+                Console.WriteLine(respostaJson);  // Debug
 
                 txtResposta.Text = resposta?.choices?[0]?.message?.content ?? "Sem resposta.";
 
@@ -115,7 +115,7 @@ namespace Suporte_TI.Forms
 
         private void RegistrarUsoIA(string pergunta, string resposta)
         {
-            // Aqui você pode inserir no banco: INSERT INTO uso_ia (pergunta, resposta, data_uso) VALUES (...)
+            //inserir no banco: INSERT INTO uso_ia (pergunta, resposta, data_uso) VALUES (...)
         }
 
         private void RegistrarFeedback(bool foiUtil)
@@ -138,5 +138,9 @@ namespace Suporte_TI.Forms
             public string content { get; set; }
         }
 
+        private void IAForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

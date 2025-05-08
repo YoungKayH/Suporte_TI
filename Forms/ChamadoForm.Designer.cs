@@ -39,6 +39,7 @@
             this.flowLayoutChamados.Name = "flowLayoutChamados";
             this.flowLayoutChamados.Size = new System.Drawing.Size(800, 450);
             this.flowLayoutChamados.TabIndex = 0;
+            this.flowLayoutChamados.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutChamados_Paint);
             // 
             // ChamadoForm
             // 
