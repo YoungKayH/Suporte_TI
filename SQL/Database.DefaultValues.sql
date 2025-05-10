@@ -1,7 +1,8 @@
 -- Inserir tipos de usuário
 INSERT INTO TIPO_USUARIO (TIPO_NOME) VALUES
 ('Administrador'),
-('Usuário Comum');
+('Atendente'),
+('Cliente');
 
 -- Inserir usuários
 INSERT INTO USUARIOS (USU_NOME, USU_SENHA, USU_EMAIL, USU_CPF, USU_TELEFONE, USU_ENDERECO, USU_DATANASC, USU_SEXO, USU_STATUS, TIPO_ID) VALUES
