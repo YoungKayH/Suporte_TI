@@ -5,8 +5,7 @@ INSERT INTO TIPO_USUARIO (TIPO_NOME) VALUES
 
 -- Inserir usuários
 INSERT INTO USUARIOS (USU_NOME, USU_SENHA, USU_EMAIL, USU_CPF, USU_TELEFONE, USU_ENDERECO, USU_DATANASC, USU_SEXO, USU_STATUS, TIPO_ID) VALUES
-('João Silva', 'senha_hash_1', 'joao.silva@example.com', '12345678901', '21987654321', 'Rua Exemplo 123, Centro', '1990-05-10', 'M', 'S', 1),
-('Maria Oliveira', 'senha_hash_2', 'maria.oliveira@example.com', '98765432109', '21912345678', 'Avenida Central 456, Bairro Novo', '1985-07-15', 'F', 'S', 2);
+('joao.nasc', '049a68c15c0d6e26c8b4a0743e6b87f074864c2fae5983c88956cb2882d608f5', 'joao.silva@example.com', '12345678901', '21987654321', 'Rua Exemplo 123, Centro', '1990-05-10', 'M', 'S', 1)
 
 -- Inserir categorias de chamado
 INSERT INTO CATEGORIAS_CHAMADO (CAT_NOME) VALUES
