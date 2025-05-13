@@ -1,19 +1,19 @@
--- Script PostgreSQL para criar usuário admin e configurar permissões
+-- Script PostgreSQL para criar usuï¿½rio admin e configurar permissï¿½es
 
--- 1. Criar o usuário com senha forte
+-- 1. Criar o usuï¿½rio com senha forte
 CREATE USER admin_chamados WITH PASSWORD 'S3nh4Sup3rS3gur@!2024';
 
--- 2. Conceder todos os privilégios no banco de dados "chamados"
+-- 2. Conceder todos os privilï¿½gios no banco de dados "chamados"
 GRANT ALL PRIVILEGES ON DATABASE chamados TO admin_chamados;
 
--- 3. Conceder privilégios em todas as tabelas (execute isto após conectar ao banco "chamados")
+-- 3. Conceder privilï¿½gios em todas as tabelas (execute isto apï¿½s conectar ao banco "chamados")
 \c chamados
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin_chamados;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO admin_chamados;
 GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO admin_chamados;
 
--- 4. Opcional: Tornar o usuário superusuário (se necessário)
+-- 4. Opcional: Tornar o usuï¿½rio superusuï¿½rio (se necessï¿½rio)
 ALTER USER admin_chamados WITH SUPERUSER;
 
--- Connection string para uso em aplicações:
+-- Connection string para uso em aplicaï¿½ï¿½es:
 -- PostgreSQL: postgresql://admin_chamados:S3nh4Sup3rS3gur@!2024@localhost:5432/chamados

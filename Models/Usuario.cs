@@ -11,15 +11,15 @@ namespace Suporte_TI.Models
     {
         public int Id { get; set; }
         public string nome { get; set; }
-        public string email { get; set; } // pode usar como login
+        public string email { get; set; }
         public string senha { get; set; }
-        public int tipoId { get; set; } // 1 = gerente, 0 = normal, ou conforme TIPO_ID
+        public int tipoId { get; set; }
         public string cpf { get; set; }
         public string telefone { get; set; }
         public string endereco { get; set; }
         public DateTime dataNascimento { get; set; }
         public string sexo { get; set; }
-        public string status { get; set; } = "S"; // Ativo por padrão
+        public string status { get; set; } = "S";
 
         public override string ToString()
         {

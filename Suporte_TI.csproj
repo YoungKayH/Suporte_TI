@@ -138,12 +138,6 @@
     <Compile Include="Forms\Painel.Designer.cs">
       <DependentUpon>Painel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\softwareForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\softwareForm.Designer.cs">
-      <DependentUpon>softwareForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Chamado.cs" />
     <Compile Include="Models\Prioridade.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -178,9 +172,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Painel.resx">
       <DependentUpon>Painel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\softwareForm.resx">
-      <DependentUpon>softwareForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

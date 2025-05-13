@@ -15,7 +15,7 @@ namespace Suporte_TI.Forms
     public partial class ChatChamado : Form
     {
         private int chamadoId;
-        private string connStr = "Host=localhost;Username=postgres;Password=2005;Database=suporte_ti";
+        private string connStr = "Host=localhost;Username=postgres;Password=2005;Database=chamados";
 
         public ChatChamado(int id)
         {
@@ -100,17 +100,22 @@ namespace Suporte_TI.Forms
                                     MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Question);
 
+            DateTime dataAtual = DateTime.Now; //Captura a data atual pra inserir no BD
+
             if (resultado == DialogResult.Yes)
             {
                 using (var conn = new NpgsqlConnection(connStr))
                 {
                     conn.Open();
 
-                    string sql = "UPDATE chamados SET cham_status = 'FECHADO' WHERE cham_id = @id";
+                    string sql = @"UPDATE chamados 
+                           SET cham_status = 'FECHADO', cham_data_fechamento = @data 
+                           WHERE cham_id = @id";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("id", chamadoId);
+                        cmd.Parameters.AddWithValue("data", dataAtual.Date);
                         cmd.ExecuteNonQuery();
                     }
                 }

@@ -46,8 +46,8 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.gbSexo = new System.Windows.Forms.GroupBox();
-            this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.gbSexo.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +125,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(101, 64);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(379, 28);
             this.txtNome.TabIndex = 9;
@@ -133,7 +133,7 @@
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(103, 104);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(226, 28);
             this.txtSenha.TabIndex = 10;
@@ -142,7 +142,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(569, 64);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(375, 28);
             this.txtEmail.TabIndex = 11;
@@ -150,7 +150,7 @@
             // txtCPF
             // 
             this.txtCPF.Location = new System.Drawing.Point(103, 161);
-            this.txtCPF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCPF.Margin = new System.Windows.Forms.Padding(4);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(228, 28);
             this.txtCPF.TabIndex = 12;
@@ -158,7 +158,7 @@
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(607, 104);
-            this.txtTelefone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(219, 28);
             this.txtTelefone.TabIndex = 13;
@@ -166,7 +166,7 @@
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(607, 158);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(246, 28);
             this.txtEndereco.TabIndex = 14;
@@ -182,10 +182,12 @@
             // 
             // dtpDataNasc
             // 
-            this.dtpDataNasc.Location = new System.Drawing.Point(38, 258);
+            this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNasc.Location = new System.Drawing.Point(38, 261);
             this.dtpDataNasc.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpDataNasc.Name = "dtpDataNasc";
-            this.dtpDataNasc.Size = new System.Drawing.Size(382, 28);
+            this.dtpDataNasc.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpDataNasc.Size = new System.Drawing.Size(155, 28);
             this.dtpDataNasc.TabIndex = 19;
             // 
             // btnVoltar
@@ -219,17 +221,6 @@
             this.gbSexo.TabStop = false;
             this.gbSexo.Text = "Sexo";
             // 
-            // rbMasculino
-            // 
-            this.rbMasculino.AutoSize = true;
-            this.rbMasculino.Location = new System.Drawing.Point(6, 27);
-            this.rbMasculino.Name = "rbMasculino";
-            this.rbMasculino.Size = new System.Drawing.Size(115, 25);
-            this.rbMasculino.TabIndex = 0;
-            this.rbMasculino.TabStop = true;
-            this.rbMasculino.Text = "Masculino";
-            this.rbMasculino.UseVisualStyleBackColor = true;
-            // 
             // rbFeminino
             // 
             this.rbFeminino.AutoSize = true;
@@ -240,6 +231,17 @@
             this.rbFeminino.TabStop = true;
             this.rbFeminino.Text = "Feminino";
             this.rbFeminino.UseVisualStyleBackColor = true;
+            // 
+            // rbMasculino
+            // 
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(6, 27);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(115, 25);
+            this.rbMasculino.TabIndex = 0;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
             // 
             // cbTipoUsuario
             // 
@@ -274,7 +276,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastroUsu";
             this.Text = "CadastroUsu";
             this.gbSexo.ResumeLayout(false);
@@ -299,12 +301,12 @@
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpDataNasc;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.GroupBox gbSexo;
         private System.Windows.Forms.RadioButton rbFeminino;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
+        private System.Windows.Forms.DateTimePicker dtpDataNasc;
     }
 }
