@@ -98,6 +98,12 @@ namespace Suporte_TI
                                 MessageBoxIcon.Error);
             }
         }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            CadastroUsu cad = new CadastroUsu();
+            cad.Show();
+        }
     }
 }
 

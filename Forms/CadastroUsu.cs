@@ -29,8 +29,8 @@ namespace Suporte_TI.Forms
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
+            //Form1 Login = new Form1();
+            //Login.Show();
             this.Close();
         }
 

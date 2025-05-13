@@ -10,7 +10,6 @@ namespace Suporte_TI.Forms
 {
     public partial class ChamadoForm : Form
     {
-        private string connStr = "Host=localhost;Username=postgres;Password=2005;Database=suporte_ti";
 
         public ChamadoForm()
         {

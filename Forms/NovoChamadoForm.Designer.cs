@@ -64,7 +64,7 @@
             this.txtChamado.Name = "txtChamado";
             this.txtChamado.Size = new System.Drawing.Size(409, 270);
             this.txtChamado.TabIndex = 6;
-            this.txtChamado.Text = "descreva seu problema aqui...";
+            this.txtChamado.Text = "descreva um breve resumo aqui...";
             this.txtChamado.Click += new System.EventHandler(this.txtChamado_Click);
             this.txtChamado.Leave += new System.EventHandler(this.txtChamado_Leave);
             // 
@@ -72,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(104, 160);
+            this.label2.Location = new System.Drawing.Point(106, 160);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(206, 21);
             this.label2.TabIndex = 7;
