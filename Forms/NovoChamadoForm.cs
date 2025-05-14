@@ -25,9 +25,10 @@ namespace Suporte_TI.Forms
             InitializeComponent();
 
             //Itens do ComboBox
-            cbPrioridade.Items.Add("Normal");
-            cbPrioridade.Items.Add("Urgente");
-            cbPrioridade.Items.Add("Critico");
+            cbPrioridade.Items.Add("Alta");   // ID 1
+            cbPrioridade.Items.Add("Média");  // ID 2
+            cbPrioridade.Items.Add("Baixa");  // ID 3
+
 
             cbPrioridade.SelectedIndex = 0;
         }
@@ -110,12 +111,12 @@ namespace Suporte_TI.Forms
                 response.EnsureSuccessStatusCode();
 
                 var respostaJson = await response.Content.ReadAsStringAsync();
-                MessageBox.Show("Resposta bruta da IA:\n" + respostaJson); // Para debug
+              //  MessageBox.Show("Resposta bruta da IA:\n" + respostaJson); // Para debug
 
                 var respostaObj = JsonSerializer.Deserialize<RespostaIA>(respostaJson);
 
                 string categoriaNome = respostaObj?.choices?.FirstOrDefault()?.message?.content?.Trim().ToLower();
-                MessageBox.Show($"A IA classificou como: {categoriaNome}");
+              //  MessageBox.Show($"A IA classificou como: {categoriaNome}");
 
                 int categoriaId;
 

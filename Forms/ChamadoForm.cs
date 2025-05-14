@@ -31,9 +31,9 @@ namespace Suporte_TI.Forms
                              WHERE c.usu_id = @usuId AND c.cham_status = 'ABERTO'
                              ORDER BY 
                              CASE p.pri_nome
-                                WHEN 'Crítico' THEN 1
-                                WHEN 'Urgente' THEN 2
-                                WHEN 'Normal' THEN 3
+                                WHEN 'Alta' THEN 1
+                                WHEN 'Média' THEN 2
+                                WHEN 'Baixa' THEN 3
                                 ELSE 4
                              END,
                             c.cham_data DESC";
@@ -48,11 +48,14 @@ namespace Suporte_TI.Forms
 
                         while (reader.Read())
                         {
+                            temChamados = true;
                             int id = reader.GetInt32(0);
                             DateTime data = reader.GetDateTime(1);
                             string detalhe = reader.GetString(2);
                             string status = reader.GetString(3);
-                            string prioridade = reader.GetString(4);
+                           // string prioridade = reader.GetString(4);
+                            string prioridade = reader.GetString(4).Trim();
+
 
                             flowLayoutChamados.Controls.Add(CriarCartaoChamado(id, data, detalhe, status, prioridade));
                         }
