@@ -62,35 +62,40 @@ namespace Suporte_TI.Forms
             int categoriaId = await ObterCategoriaViaIA(descricao); //Espera a IA categorizar o chamado e passar o ID
             int prioridadeId = cbPrioridade.SelectedIndex + 1; // Exemplo: Prioridade padrão
 
-
-            using (DatabaseConnection dbConnection = new DatabaseConnection())
-            {
-                var conn = dbConnection.GetConnection();
-
-                string sql = @"INSERT INTO chamados (cham_data, cham_detalhe, cham_status, usu_id, cat_id, pri_id) 
-                       VALUES (@data, @detalhe, 'ABERTO', @usuarioId, @catId, @priId)";
-
-                using (var cmd = new NpgsqlCommand(sql, conn))
+            if ( descricao != "" ) { 
+                using (DatabaseConnection dbConnection = new DatabaseConnection())
                 {
-                    cmd.Parameters.AddWithValue("data", dataAtual.Date); // apenas a data
-                    cmd.Parameters.AddWithValue("detalhe", descricao);
-                    cmd.Parameters.AddWithValue("usuarioId", usuarioId);
-                    cmd.Parameters.AddWithValue("catId", categoriaId);
-                    cmd.Parameters.AddWithValue("priId", prioridadeId);
-                   // cmd.Parameters.AddWithValue("priId", cbPrioridade.SelectedIndex > -1 ?
-                   // (object)cbPrioridade.SelectedValue : DBNull.Value);
+                    var conn = dbConnection.GetConnection();
 
-                    try
+                    string sql = @"INSERT INTO chamados (cham_data, cham_detalhe, cham_status, usu_id, cat_id, pri_id) 
+                           VALUES (@data, @detalhe, 'ABERTO', @usuarioId, @catId, @priId)";
+
+                    using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Chamado enviado com sucesso!");
-                        txtChamado.Text = "descreva um breve resumo aqui...";
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro ao enviar chamado: " + ex.Message);
+                        cmd.Parameters.AddWithValue("data", dataAtual.Date); // apenas a data
+                        cmd.Parameters.AddWithValue("detalhe", descricao);
+                        cmd.Parameters.AddWithValue("usuarioId", usuarioId);
+                        cmd.Parameters.AddWithValue("catId", categoriaId);
+                        cmd.Parameters.AddWithValue("priId", prioridadeId);
+                       // cmd.Parameters.AddWithValue("priId", cbPrioridade.SelectedIndex > -1 ?
+                       // (object)cbPrioridade.SelectedValue : DBNull.Value);
+
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Chamado enviado com sucesso!");
+                            // Captura os dados do chamado
+                            descricao = "";
+                            txtChamado.Text = "descreva um breve resumo aqui...";
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erro ao enviar chamado: " + ex.Message);
+                        }
                     }
                 }
+            } else {
+                MessageBox.Show("Descrição vazia do chamado, tente novamente!");
             }
         }
         private async Task<int> ObterCategoriaViaIA(string descricao)

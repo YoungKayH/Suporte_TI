@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Suporte_TI.Forms
 {
@@ -60,7 +62,7 @@ namespace Suporte_TI.Forms
                     MessageBox.Show("Preencha todos os campos obrigatórios!");
                     return;
                 }
-                
+
                 var parametros = new Dictionary<string, string>
                 {
                     {"@telefone", novoUsuario.telefone},
@@ -77,19 +79,12 @@ namespace Suporte_TI.Forms
                         return;
                     }
                 }
-                // Validar idade mínima (18 anos)
-                //if (DateTime.Today.Year - dataNasc.Year < 18)
-                //{
-                //  MessageBox.Show("O usuário deve ter pelo menos 18 anos!");
-                //  return;
-                //}
 
                 // Cadastrar no banco
-                string connectionString = "Host=localhost;Port=5432;Database=Chamados;Username=adminSA;Password=admin123";
-
-                using (var conn = new NpgsqlConnection(connectionString))
+                using (DatabaseConnection dbConnection = new DatabaseConnection())
                 {
-                    conn.Open();
+                    var conexao = dbConnection.GetConnection();
+                    Console.WriteLine("Conexão estabelecida com sucesso!");
 
                     string sql = @"INSERT INTO USUARIOS (
                         USU_NOME, USU_SENHA, USU_EMAIL, USU_CPF, 
@@ -100,7 +95,7 @@ namespace Suporte_TI.Forms
                         @telefone, @endereco, @dataNasc, 
                         @sexo, 'S', @tipoId)";
 
-                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    using (var cmd = new NpgsqlCommand(sql, conexao))
                     {
                         cmd.Parameters.AddWithValue("nome", novoUsuario.nome);
                         cmd.Parameters.AddWithValue("senha", novoUsuario.senha);
@@ -149,7 +144,7 @@ namespace Suporte_TI.Forms
                     MessageBox.Show($"Erro no banco de dados ({ex.SqlState}): {ex.Message}");
                 }
             }
-     
+
         }
         //Métodos Auxiliares
         private void LimparCampos()
@@ -176,6 +171,51 @@ namespace Suporte_TI.Forms
         {
             // Remove caracteres não numéricos
             return new string(cpf.Where(char.IsDigit).ToArray());
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNome.Text.Contains(" "))
+            {
+                MessageBox.Show("Não são permitidos espaços neste campo!");
+                txtNome.Text = txtNome.Text.Replace(" ", ""); // Remove espaços
+            }
+        }
+
+        private void dtpDataNasc_Validating(object sender, CancelEventArgs e)
+        {
+            if (!DateTime.TryParseExact(
+                dtpDataNasc.Text,
+                "dd/MM/yyyy",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out DateTime dataNascimento))
+            {
+                MessageBox.Show("Data inválida! Use o formato DD/MM/AAAA.");
+                e.Cancel = true; // Mantém o foco no campo até corrigir
+            }
+            else if (dataNascimento > DateTime.Today)
+            {
+                MessageBox.Show("Data de nascimento não pode ser futura!");
+                e.Cancel = true;
+            }
+            else if (dataNascimento.Year < 1900)
+            {
+                MessageBox.Show("Data de nascimento muito antiga!");
+                e.Cancel = true;
+            }
+        }
+
+        private void txtEndereco_Validating(object sender, CancelEventArgs e)
+        {
+            string endereco = txtEndereco.Text.Trim();
+
+            // Verifica se o endereço não está vazio e se contém pelo menos uma letra
+            if (string.IsNullOrEmpty(endereco) || !endereco.Any(char.IsLetter))
+            {
+                MessageBox.Show("Endereço inválido! Deve conter pelo menos uma letra.");
+                e.Cancel = true; // Mantém o foco no campo até corrigir
+            }
         }
     }
 }

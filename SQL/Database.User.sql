@@ -1,4 +1,8 @@
--- Script PostgreSQL para criar usu�rio admin e configurar permiss�es
+-- Script PostgreSQL para criar usu�rio admin e configurar permiss�es e criar banco
+-- a. Criar banco
+CREATE DATABASE chamados;
+
+-- b. rodar scripts já criados
 
 -- 1. Criar o usu�rio com senha forte
 CREATE USER admin_chamados WITH PASSWORD 'S3nh4Sup3rS3gur@!2024';
