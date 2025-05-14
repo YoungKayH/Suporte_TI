@@ -47,10 +47,10 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.gbSexo = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.gbSexo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.label2.Location = new System.Drawing.Point(630, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.Size = new System.Drawing.Size(83, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email";
             // 
@@ -76,7 +76,7 @@
             this.label3.Location = new System.Drawing.Point(84, 171);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 25);
+            this.label3.Size = new System.Drawing.Size(63, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "CPF";
             // 
@@ -89,7 +89,7 @@
             this.label4.Location = new System.Drawing.Point(84, 130);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 25);
+            this.label4.Size = new System.Drawing.Size(95, 32);
             this.label4.TabIndex = 3;
             this.label4.Text = "Senha";
             // 
@@ -102,7 +102,7 @@
             this.label5.Location = new System.Drawing.Point(630, 137);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 25);
+            this.label5.Size = new System.Drawing.Size(123, 32);
             this.label5.TabIndex = 4;
             this.label5.Text = "Telefone";
             // 
@@ -115,7 +115,7 @@
             this.label6.Location = new System.Drawing.Point(630, 207);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 25);
+            this.label6.Size = new System.Drawing.Size(139, 32);
             this.label6.TabIndex = 5;
             this.label6.Text = "Endereço";
             // 
@@ -128,7 +128,7 @@
             this.label7.Location = new System.Drawing.Point(84, 222);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 25);
+            this.label7.Size = new System.Drawing.Size(241, 32);
             this.label7.TabIndex = 6;
             this.label7.Text = "Data Nascimento";
             // 
@@ -141,7 +141,7 @@
             this.label9.Location = new System.Drawing.Point(635, 429);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 25);
+            this.label9.Size = new System.Drawing.Size(113, 32);
             this.label9.TabIndex = 8;
             this.label9.Text = "Nivel ID";
             // 
@@ -153,7 +153,7 @@
             this.txtNome.Location = new System.Drawing.Point(165, 90);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(358, 24);
+            this.txtNome.Size = new System.Drawing.Size(358, 28);
             this.txtNome.TabIndex = 9;
             // 
             // txtSenha
@@ -164,7 +164,7 @@
             this.txtSenha.Location = new System.Drawing.Point(165, 129);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(358, 24);
+            this.txtSenha.Size = new System.Drawing.Size(358, 28);
             this.txtSenha.TabIndex = 10;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -176,7 +176,7 @@
             this.txtEmail.Location = new System.Drawing.Point(705, 86);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 24);
+            this.txtEmail.Size = new System.Drawing.Size(339, 28);
             this.txtEmail.TabIndex = 11;
             // 
             // txtCPF
@@ -187,27 +187,29 @@
             this.txtCPF.Location = new System.Drawing.Point(165, 171);
             this.txtCPF.Margin = new System.Windows.Forms.Padding(4);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(358, 24);
+            this.txtCPF.Size = new System.Drawing.Size(358, 28);
             this.txtCPF.TabIndex = 12;
             // 
             // txtTelefone
             // 
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.ForeColor = System.Drawing.SystemColors.Window;
             this.txtTelefone.Location = new System.Drawing.Point(635, 166);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(409, 24);
+            this.txtTelefone.Size = new System.Drawing.Size(409, 28);
             this.txtTelefone.TabIndex = 13;
             // 
             // txtEndereco
             // 
             this.txtEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEndereco.ForeColor = System.Drawing.SystemColors.Window;
             this.txtEndereco.Location = new System.Drawing.Point(635, 236);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(409, 24);
+            this.txtEndereco.Size = new System.Drawing.Size(409, 28);
             this.txtEndereco.TabIndex = 14;
             // 
             // label1
@@ -218,7 +220,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(84, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 25);
+            this.label1.Size = new System.Drawing.Size(93, 32);
             this.label1.TabIndex = 18;
             this.label1.Text = "Nome";
             // 
@@ -229,7 +231,7 @@
             this.dtpDataNasc.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpDataNasc.Size = new System.Drawing.Size(435, 24);
+            this.dtpDataNasc.Size = new System.Drawing.Size(435, 28);
             this.dtpDataNasc.TabIndex = 19;
             // 
             // btnVoltar
@@ -268,23 +270,35 @@
             this.gbSexo.Text = "Sexo";
             this.gbSexo.Enter += new System.EventHandler(this.gbSexo_Enter);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 91);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(225, 32);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Prefiro Não Dizer";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // rbFeminino
             // 
             this.rbFeminino.AutoSize = true;
             this.rbFeminino.Location = new System.Drawing.Point(6, 58);
             this.rbFeminino.Name = "rbFeminino";
-            this.rbFeminino.Size = new System.Drawing.Size(111, 27);
+            this.rbFeminino.Size = new System.Drawing.Size(138, 32);
             this.rbFeminino.TabIndex = 1;
             this.rbFeminino.TabStop = true;
             this.rbFeminino.Text = "Feminino";
             this.rbFeminino.UseVisualStyleBackColor = true;
+            this.rbFeminino.CheckedChanged += new System.EventHandler(this.rbFeminino_CheckedChanged);
             // 
             // rbMasculino
             // 
             this.rbMasculino.AutoSize = true;
             this.rbMasculino.Location = new System.Drawing.Point(6, 29);
             this.rbMasculino.Name = "rbMasculino";
-            this.rbMasculino.Size = new System.Drawing.Size(122, 27);
+            this.rbMasculino.Size = new System.Drawing.Size(152, 32);
             this.rbMasculino.TabIndex = 0;
             this.rbMasculino.TabStop = true;
             this.rbMasculino.Text = "Masculino";
@@ -297,26 +311,15 @@
             this.cbTipoUsuario.FormattingEnabled = true;
             this.cbTipoUsuario.Location = new System.Drawing.Point(733, 429);
             this.cbTipoUsuario.Name = "cbTipoUsuario";
-            this.cbTipoUsuario.Size = new System.Drawing.Size(131, 27);
+            this.cbTipoUsuario.Size = new System.Drawing.Size(131, 29);
             this.cbTipoUsuario.TabIndex = 23;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 91);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(179, 27);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Prefiro Não Dizer";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // CadastroUsu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1117, 634);
+            this.ClientSize = new System.Drawing.Size(1117, 626);
             this.Controls.Add(this.cbTipoUsuario);
             this.Controls.Add(this.gbSexo);
             this.Controls.Add(this.btnCadastrar);
@@ -340,7 +343,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastroUsu";
             this.Text = "CadastroUsu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CadastroUsu_Load);
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();

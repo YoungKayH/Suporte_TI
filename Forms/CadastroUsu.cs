@@ -187,5 +187,10 @@ namespace Suporte_TI.Forms
         {
 
         }
+
+        private void rbFeminino_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

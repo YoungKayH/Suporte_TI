@@ -25,11 +25,11 @@ namespace Suporte_TI.Forms
             InitializeComponent();
 
             //Itens do ComboBox
-            //cbPrioridade.Items.Add("Normal");
-            //cbPrioridade.Items.Add("Urgente");
-            //cbPrioridade.Items.Add("Critico");
+            cbPrioridade.Items.Add("Alta");
+            cbPrioridade.Items.Add("Média");
+            cbPrioridade.Items.Add("Baixa");
 
-            //cbPrioridade.SelectedIndex = 0;
+            cbPrioridade.SelectedIndex = 0;
         }
 
         private void txtChamado_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Suporte_TI.Forms
             int usuarioId = SessaoUsuario.UsuarioLogado.Id;
 
             int categoriaId = await ObterCategoriaViaIA(descricao); //Espera a IA categorizar o chamado e passar o ID
-            //int prioridadeId = cbPrioridade.SelectedIndex + 1; // Exemplo: Prioridade padrão
+            int prioridadeId = cbPrioridade.SelectedIndex + 1; // Exemplo: Prioridade padrão
 
 
             using (DatabaseConnection dbConnection = new DatabaseConnection())
@@ -76,7 +76,7 @@ namespace Suporte_TI.Forms
                     cmd.Parameters.AddWithValue("detalhe", descricao);
                     cmd.Parameters.AddWithValue("usuarioId", usuarioId);
                     cmd.Parameters.AddWithValue("catId", categoriaId);
-                    //cmd.Parameters.AddWithValue("priId", prioridadeId);
+                    cmd.Parameters.AddWithValue("priId", prioridadeId);
                    // cmd.Parameters.AddWithValue("priId", cbPrioridade.SelectedIndex > -1 ?
                    // (object)cbPrioridade.SelectedValue : DBNull.Value);
 
@@ -195,9 +195,7 @@ namespace Suporte_TI.Forms
 
         private void NovoChamadoForm_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.StartPosition = FormStartPosition.CenterScreen;
+           
         }
     }
 

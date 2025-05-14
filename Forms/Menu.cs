@@ -45,8 +45,8 @@ namespace Suporte_TI
             formularioFilho.TopLevel = false;
             formularioFilho.FormBorderStyle = FormBorderStyle.None;
             formularioFilho.Dock = DockStyle.Fill;
-            //panelConteudo.Controls.Add(formularioFilho);
-            //panelConteudo.Tag = formularioFilho;
+            panelConteudo.Controls.Add(formularioFilho);
+            panelConteudo.Tag = formularioFilho;
             formularioFilho.BringToFront();
             formularioFilho.Show();
         }
@@ -75,16 +75,14 @@ namespace Suporte_TI
             iaForm.FormBorderStyle = FormBorderStyle.None;
             iaForm.Dock = DockStyle.Fill;
 
-            //panelConteudo.Controls.Clear(); // nome correto do painel
-            //panelConteudo.Controls.Add(iaForm);
-            //iaForm.Show();
+            panelConteudo.Controls.Clear(); // nome correto do painel
+            panelConteudo.Controls.Add(iaForm);
+            iaForm.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            
         }
     }
 }

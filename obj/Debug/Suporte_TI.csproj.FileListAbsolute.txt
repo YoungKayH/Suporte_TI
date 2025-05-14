@@ -140,3 +140,9 @@ C:\Workspace\trampoFaculdade\chamados_gui\obj\Debug\Suporte_TI.csproj.Up2Date
 C:\Workspace\trampoFaculdade\chamados_gui\obj\Debug\Suporte_TI.exe
 C:\Workspace\trampoFaculdade\chamados_gui\obj\Debug\Suporte_TI.pdb
 >>>>>>> 9ee8189ecb9e7a3f0c6fcdcbfa994f459e243f5a
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI-main.exe.config
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI-main.exe
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI-main.pdb
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI-main.Properties.Resources.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI-main.exe
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI-main.pdb

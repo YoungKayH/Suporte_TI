@@ -132,9 +132,37 @@ namespace Suporte_TI.Forms
 
         private void ChatChamado_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string texto = txtMensagem.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                MessageBox.Show("Digite uma mensagem.");
+                return;
+            }
+
+            using (var conn = new NpgsqlConnection(connStr))
+            {
+                conn.Open();
+
+                string sql = @"INSERT INTO mensagens (cham_id, remetente_id, mensagem) 
+                               VALUES (@chamId, @remetenteId, @mensagem)";
+
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("chamId", chamadoId);
+                    cmd.Parameters.AddWithValue("remetenteId", SessaoUsuario.UsuarioLogado.Id);
+                    cmd.Parameters.AddWithValue("mensagem", texto);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            txtMensagem.Clear();
+            CarregarMensagens();
         }
     }
 }
