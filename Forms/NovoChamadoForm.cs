@@ -177,6 +177,28 @@ namespace Suporte_TI.Forms
         {
 
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://forms.cloud.microsoft/r/nW3TsFeSFL");
+        }
+
+        private void NovoChamadoForm_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
     }
 
     public static class SessaoUsuario

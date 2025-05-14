@@ -36,19 +36,22 @@
             this.flowLayoutChamados.AutoScroll = true;
             this.flowLayoutChamados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutChamados.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutChamados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutChamados.Name = "flowLayoutChamados";
-            this.flowLayoutChamados.Size = new System.Drawing.Size(800, 450);
+            this.flowLayoutChamados.Size = new System.Drawing.Size(600, 366);
             this.flowLayoutChamados.TabIndex = 0;
             this.flowLayoutChamados.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutChamados_Paint);
             // 
             // ChamadoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.flowLayoutChamados);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChamadoForm";
             this.Text = "ChamadoForm";
+            this.Load += new System.EventHandler(this.ChamadoForm_Load);
             this.ResumeLayout(false);
 
         }

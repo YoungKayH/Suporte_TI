@@ -50,6 +50,7 @@
             this.rbFeminino = new System.Windows.Forms.RadioButton();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.gbSexo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(630, 175);
+            this.label2.Location = new System.Drawing.Point(630, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 25);
@@ -72,7 +73,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(84, 254);
+            this.label3.Location = new System.Drawing.Point(84, 171);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 25);
@@ -85,7 +86,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(84, 213);
+            this.label4.Location = new System.Drawing.Point(84, 130);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 25);
@@ -98,7 +99,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(630, 225);
+            this.label5.Location = new System.Drawing.Point(630, 137);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 25);
@@ -111,7 +112,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(630, 295);
+            this.label6.Location = new System.Drawing.Point(630, 207);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 25);
@@ -124,7 +125,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(84, 305);
+            this.label7.Location = new System.Drawing.Point(84, 222);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(189, 25);
@@ -137,7 +138,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(630, 384);
+            this.label9.Location = new System.Drawing.Point(635, 429);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 25);
@@ -149,7 +150,7 @@
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNome.Location = new System.Drawing.Point(165, 173);
+            this.txtNome.Location = new System.Drawing.Point(165, 90);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(358, 24);
@@ -160,7 +161,7 @@
             this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSenha.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSenha.Location = new System.Drawing.Point(165, 212);
+            this.txtSenha.Location = new System.Drawing.Point(165, 129);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(358, 24);
@@ -172,7 +173,7 @@
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtEmail.Location = new System.Drawing.Point(705, 174);
+            this.txtEmail.Location = new System.Drawing.Point(705, 86);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(339, 24);
@@ -183,7 +184,7 @@
             this.txtCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCPF.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCPF.Location = new System.Drawing.Point(165, 254);
+            this.txtCPF.Location = new System.Drawing.Point(165, 171);
             this.txtCPF.Margin = new System.Windows.Forms.Padding(4);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(358, 24);
@@ -193,7 +194,7 @@
             // 
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(635, 254);
+            this.txtTelefone.Location = new System.Drawing.Point(635, 166);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(409, 24);
@@ -203,7 +204,7 @@
             // 
             this.txtEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEndereco.Location = new System.Drawing.Point(635, 324);
+            this.txtEndereco.Location = new System.Drawing.Point(635, 236);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(409, 24);
@@ -215,7 +216,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(84, 173);
+            this.label1.Location = new System.Drawing.Point(84, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 18;
@@ -224,7 +225,7 @@
             // dtpDataNasc
             // 
             this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNasc.Location = new System.Drawing.Point(88, 334);
+            this.dtpDataNasc.Location = new System.Drawing.Point(88, 251);
             this.dtpDataNasc.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -233,7 +234,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(64, 546);
+            this.btnVoltar.Location = new System.Drawing.Point(88, 490);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(112, 50);
             this.btnVoltar.TabIndex = 20;
@@ -243,7 +244,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(607, 546);
+            this.btnCadastrar.Location = new System.Drawing.Point(640, 493);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(112, 47);
             this.btnCadastrar.TabIndex = 21;
@@ -254,13 +255,14 @@
             // gbSexo
             // 
             this.gbSexo.BackColor = System.Drawing.Color.Transparent;
+            this.gbSexo.Controls.Add(this.radioButton1);
             this.gbSexo.Controls.Add(this.rbFeminino);
             this.gbSexo.Controls.Add(this.rbMasculino);
             this.gbSexo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSexo.ForeColor = System.Drawing.SystemColors.Control;
-            this.gbSexo.Location = new System.Drawing.Point(88, 384);
+            this.gbSexo.Location = new System.Drawing.Point(88, 301);
             this.gbSexo.Name = "gbSexo";
-            this.gbSexo.Size = new System.Drawing.Size(435, 96);
+            this.gbSexo.Size = new System.Drawing.Size(435, 130);
             this.gbSexo.TabIndex = 22;
             this.gbSexo.TabStop = false;
             this.gbSexo.Text = "Sexo";
@@ -293,10 +295,21 @@
             this.cbTipoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(23)))), ((int)(((byte)(57)))));
             this.cbTipoUsuario.ForeColor = System.Drawing.SystemColors.Window;
             this.cbTipoUsuario.FormattingEnabled = true;
-            this.cbTipoUsuario.Location = new System.Drawing.Point(728, 384);
+            this.cbTipoUsuario.Location = new System.Drawing.Point(733, 429);
             this.cbTipoUsuario.Name = "cbTipoUsuario";
             this.cbTipoUsuario.Size = new System.Drawing.Size(131, 27);
             this.cbTipoUsuario.TabIndex = 23;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 91);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(179, 27);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Prefiro Não Dizer";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // CadastroUsu
             // 
@@ -358,5 +371,6 @@
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.DateTimePicker dtpDataNasc;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

@@ -124,5 +124,17 @@ namespace Suporte_TI.Forms
                 this.Close(); // Fecha o formulário do chat
             }
         }
+
+        private void lblTituloChamado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChatChamado_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
     }
 }

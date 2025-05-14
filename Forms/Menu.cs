@@ -80,5 +80,11 @@ namespace Suporte_TI
             //iaForm.Show();
         }
 
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
     }
 }

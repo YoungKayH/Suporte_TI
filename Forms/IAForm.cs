@@ -214,7 +214,9 @@ namespace Suporte_TI.Forms
 
         private void IAForm_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

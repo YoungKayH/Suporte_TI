@@ -104,6 +104,18 @@ namespace Suporte_TI
             CadastroUsu cad = new CadastroUsu();
             cad.Show();
         }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
     }
 }
 

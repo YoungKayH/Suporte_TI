@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A40584F5-702A-4AB9-B769-0E2BF41F1339}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Suporte_TI</RootNamespace>
-    <AssemblyName>Suporte_TI</AssemblyName>
+    <RootNamespace>Suporte_TI-main</RootNamespace>
+    <AssemblyName>Suporte_TI-main</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
