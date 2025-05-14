@@ -37,13 +37,19 @@
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.3\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=5.0.10.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.5.0.10\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Supabase.Core.1.0.0\lib\netstandard2.0\Supabase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Postgrest, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Supabase.Postgrest.4.1.0\lib\netstandard2.0\Supabase.Postgrest.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -77,6 +83,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +97,7 @@
   <ItemGroup>
     <Compile Include="Const\Constants.cs" />
     <Compile Include="Data\DatabaseConnection.cs" />
+    <Compile Include="Data\SupabaseApi.cs" />
     <Compile Include="Forms\CadastroUsu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +147,7 @@
       <DependentUpon>Painel.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Chamado.cs" />
+    <Compile Include="Models\MensagemSupabase.cs" />
     <Compile Include="Models\Prioridade.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />

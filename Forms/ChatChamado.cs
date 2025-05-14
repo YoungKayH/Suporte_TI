@@ -9,14 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Suporte_TI.Data;
+using Newtonsoft.Json;
+
 
 namespace Suporte_TI.Forms
 {
     public partial class ChatChamado : Form
     {
         private int chamadoId;
-        private string connStr = "Host=localhost;Username=postgres;Password=2005;Database=chamados";
-
         public ChatChamado(int id)
         {
             InitializeComponent();
@@ -28,13 +29,33 @@ namespace Suporte_TI.Forms
             }
             CarregarMensagens();
         }
-        private void CarregarMensagens()
+        private async void CarregarMensagens()
         {
             listMensagens.Items.Clear();
 
-            using (var conn = new NpgsqlConnection(connStr))
+            // 1. Carrega mensagens do Supabase
+            try
             {
-                conn.Open();
+                var supabaseApi = new Suporte_TI.Data.SupabaseApi();
+                var mensagensSupabase = supabaseApi.ObterMensagens(chamadoId);
+
+                foreach (var msg in mensagensSupabase)
+                {
+                    //string nomeRemetente = "Usuário ID " + msg.remetente_id;
+                    string nomeRemetente = ObterNomeUsuarioPorId(msg.remetente_id);
+                    string exibicao = $"[{msg.data_envio:dd/MM/yyyy HH:mm}] {nomeRemetente}: {msg.mensagem}";
+
+                    listMensagens.Items.Add(exibicao);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao acessar Supabase: " + ex.Message);
+            }
+
+            using (DatabaseConnection databaseConnection = new DatabaseConnection() )
+            {
+                var conn = databaseConnection.GetConnection();
 
                 var sql = @"SELECT m.mensagem, u.usu_nome, m.data_envio 
                             FROM mensagens m 
@@ -73,9 +94,9 @@ namespace Suporte_TI.Forms
                 return;
             }
 
-            using (var conn = new NpgsqlConnection(connStr))
+            using (DatabaseConnection databaseConnection = new DatabaseConnection())
             {
-                conn.Open();
+                var conn = databaseConnection.GetConnection();
 
                 string sql = @"INSERT INTO mensagens (cham_id, remetente_id, mensagem) 
                                VALUES (@chamId, @remetenteId, @mensagem)";
@@ -87,6 +108,28 @@ namespace Suporte_TI.Forms
                     cmd.Parameters.AddWithValue("mensagem", texto);
                     cmd.ExecuteNonQuery();
                 }
+            }
+
+            txtMensagem.Clear();
+            CarregarMensagens();
+
+            try
+            {
+                var supabaseApi = new Suporte_TI.Data.SupabaseApi();
+                var mensagem = new MensagemSupabase
+                {
+                    cham_id = chamadoId,
+                    remetente_id = SessaoUsuario.UsuarioLogado.Id,
+                    remetente_nome = ObterNomeUsuarioPorId(SessaoUsuario.UsuarioLogado.Id),
+                    mensagem = texto,
+                    data_envio = DateTime.Now
+                };
+                supabaseApi.EnviarMensagem(mensagem);
+                //supabaseApi.EnviarMensagem(chamadoId, SessaoUsuario.UsuarioLogado.Id, texto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao enviar mensagem para Supabase: " + ex.Message);
             }
 
             txtMensagem.Clear();
@@ -104,9 +147,9 @@ namespace Suporte_TI.Forms
 
             if (resultado == DialogResult.Yes)
             {
-                using (var conn = new NpgsqlConnection(connStr))
+                using (DatabaseConnection databaseConnection = new DatabaseConnection())
                 {
-                    conn.Open();
+                    var conn = databaseConnection.GetConnection();  
 
                     string sql = @"UPDATE chamados 
                            SET cham_status = 'FECHADO', cham_data_fechamento = @data 
@@ -119,10 +162,33 @@ namespace Suporte_TI.Forms
                         cmd.ExecuteNonQuery();
                     }
                 }
+                try
+                {
+                    var supabaseApi = new Suporte_TI.Data.SupabaseApi();
+                   // supabaseApi.FecharChamado(chamadoId, dataAtual.Date);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao fechar chamado no Supabase: " + ex.Message);
+                }
 
                 MessageBox.Show("Chamado fechado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close(); // Fecha o formulário do chat
             }
+        }
+        private string ObterNomeUsuarioPorId(int usuarioId) // função para obter o nome do usuário
+        {
+            using (DatabaseConnection databaseConnection = new DatabaseConnection())
+            {
+                var conn = databaseConnection.GetConnection();
+                string sql = "SELECT usu_nome FROM usuarios WHERE usu_id = @id";
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("id", usuarioId);
+                    var result = cmd.ExecuteScalar();
+                    return result?.ToString() ?? $"Usuário ID {usuarioId}";
+                }
+            }  
         }
     }
 }

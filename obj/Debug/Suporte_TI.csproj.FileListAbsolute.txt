@@ -44,3 +44,7 @@ C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.csproj.Up
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.exe
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.pdb
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI.pdb
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Supabase.Core.dll
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Supabase.Postgrest.dll
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Supabase.Core.xml
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Supabase.Postgrest.xml
