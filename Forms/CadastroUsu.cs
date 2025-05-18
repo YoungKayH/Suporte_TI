@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using Suporte_TI.Data;
+using Suporte_TI.Repositories;
 using Suporte_TI.Models;
 using System;
 using System.Collections.Generic;
@@ -52,100 +53,57 @@ namespace Suporte_TI.Forms
             };
 
             try
-            {
-                // Validações básicas
-                if (string.IsNullOrWhiteSpace(txtNome.Text) ||
-                    string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                    string.IsNullOrWhiteSpace(txtSenha.Text) ||
-                    string.IsNullOrWhiteSpace(txtCPF.Text))
-                {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
-                    return;
-                }
+			{
+				// Validações básicas
+				if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+					string.IsNullOrWhiteSpace(txtEmail.Text) ||
+					string.IsNullOrWhiteSpace(txtSenha.Text) ||
+					string.IsNullOrWhiteSpace(txtCPF.Text))
+				{
+					MessageBox.Show("Preencha todos os campos obrigatórios!");
+					return;
+				}
 
-                var parametros = new Dictionary<string, string>
-                {
-                    {"@telefone", novoUsuario.telefone},
-                    {"@cpf", novoUsuario.cpf},
-                    {"@endereco", novoUsuario.endereco},
-                    {"@nome", novoUsuario.nome},
-                    {"@email", novoUsuario.email}
-                };
-                foreach (var param in parametros)
-                {
-                    if (param.Value.Length > 50) // Ajuste conforme seus limites
-                    {
-                        MessageBox.Show($"{param.Key} excede tamanho máximo: {param.Value.Length} caracteres");
-                        return;
-                    }
-                }
+				var parametros = new Dictionary<string, string>
+				{
+					{"@telefone", novoUsuario.telefone},
+					{"@cpf", novoUsuario.cpf},
+					{"@endereco", novoUsuario.endereco},
+					{"@nome", novoUsuario.nome},
+					{"@email", novoUsuario.email}
+				};
+				foreach (var param in parametros)
+				{
+					if (param.Value.Length > 50) 
+					{
+						MessageBox.Show($"{param.Key} excede tamanho máximo: {param.Value.Length} caracteres");
+						return;
+					}
+				}
 
-                // Cadastrar no banco
-                using (DatabaseConnection dbConnection = new DatabaseConnection())
-                {
-                    var conexao = dbConnection.GetConnection();
-                    Console.WriteLine("Conexão estabelecida com sucesso!");
+				// Agora usamos o repositório
+				var repo = new UsuarioRepository();
+				repo.Create(novoUsuario);
 
-                    string sql = @"INSERT INTO USUARIOS (
-                        USU_NOME, USU_SENHA, USU_EMAIL, USU_CPF, 
-                        USU_TELEFONE, USU_ENDERECO, USU_DATANASC, 
-                        USU_SEXO, USU_STATUS, TIPO_ID)
-                       VALUES (
-                        @nome, @senha, @email, @cpf, 
-                        @telefone, @endereco, @dataNasc, 
-                        @sexo, 'S', @tipoId)";
-
-                    using (var cmd = new NpgsqlCommand(sql, conexao))
-                    {
-                        cmd.Parameters.AddWithValue("nome", novoUsuario.nome);
-                        cmd.Parameters.AddWithValue("senha", novoUsuario.senha);
-                        cmd.Parameters.AddWithValue("email", novoUsuario.email);
-                        cmd.Parameters.AddWithValue("cpf", novoUsuario.cpf);
-                        cmd.Parameters.AddWithValue("telefone", novoUsuario.telefone);
-                        cmd.Parameters.AddWithValue("endereco", novoUsuario.endereco);
-                        cmd.Parameters.AddWithValue("dataNasc", novoUsuario.dataNascimento);
-                        cmd.Parameters.AddWithValue("sexo", novoUsuario.sexo);
-                        cmd.Parameters.AddWithValue("tipoId", novoUsuario.tipoId);
-
-                        // TESTES
-
-                        //Console.WriteLine($"Nome: {nome}");
-                        //Console.WriteLine($"Email: {email}");
-                        //Console.WriteLine($"Senha: {senha}");
-                        //Console.WriteLine($"CPF: {cpf}");
-                        //Console.WriteLine($"Telefone: {telefone}");
-                        //Console.WriteLine($"Endereço: {endereco}");
-                        //Console.WriteLine($"Data Nasc: {dataNasc}");
-                        //Console.WriteLine($"Sexo: {sexo}");
-                        //Console.WriteLine($"TipoId: {tipoId}");
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Usuário cadastrado com sucesso!");
-                            LimparCampos();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Falha ao cadastrar usuário.");
-                        }
-                    }
-                }
-            }
-            catch (PostgresException ex) // Use PostgresException em vez de NpgsqlException
-            {
-                if (ex.SqlState == "23505") // Código para violação de unique constraint
-                {
-                    MessageBox.Show("E-mail ou CPF já cadastrado no sistema!");
-                }
-                else
-                {
-                    MessageBox.Show($"Erro no banco de dados ({ex.SqlState}): {ex.Message}");
-                }
-            }
-
-        }
+				MessageBox.Show("Usuário cadastrado com sucesso!");
+				LimparCampos();
+			}
+			catch (PostgresException ex)
+			{
+				if (ex.SqlState == "23505")
+				{
+					MessageBox.Show("E-mail ou CPF já cadastrado no sistema!");
+				}
+				else
+				{
+					MessageBox.Show($"Erro no banco de dados ({ex.SqlState}): {ex.Message}");
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}");
+			}
+		}
         //Métodos Auxiliares
         private void LimparCampos()
         {
