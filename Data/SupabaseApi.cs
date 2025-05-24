@@ -18,7 +18,7 @@ namespace Suporte_TI.Data
     internal class SupabaseApi
     {
         private static readonly string baseUrl = "https://hivvlcsadegvepolpxqg.supabase.co";
-        private static readonly string apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdnZsY3NhZGVndmVwb2xweHFnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzE5Mjg1MywiZXhwIjoyMDYyNzY4ODUzfQ.c5s7g8jJYj0zJOb_IoAo3L61diM4vu3QMnuMU41ILrg";
+        private static readonly string apiKey = "";
         private static readonly string tabela = "mensagens";
         private static readonly JavaScriptSerializer serializer = new JavaScriptSerializer();
 
