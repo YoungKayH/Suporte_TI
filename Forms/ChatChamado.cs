@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using Suporte_TI.Data;
 using Suporte_TI.Models;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,6 @@ namespace Suporte_TI.Forms
     public partial class ChatChamado : Form
     {
         private int chamadoId;
-        private string connStr = "Host=localhost;Username=postgres;Password=2005;Database=chamados";
 
         public ChatChamado(int id)
         {
@@ -32,9 +32,9 @@ namespace Suporte_TI.Forms
         {
             listMensagens.Items.Clear();
 
-            using (var conn = new NpgsqlConnection(connStr))
+            using (DatabaseConnection dbConnection = new DatabaseConnection())
             {
-                conn.Open();
+                var conn = dbConnection.GetConnection();
 
                 var sql = @"SELECT m.mensagem, u.usu_nome, m.data_envio 
                             FROM mensagens m 
@@ -73,9 +73,9 @@ namespace Suporte_TI.Forms
                 return;
             }
 
-            using (var conn = new NpgsqlConnection(connStr))
+            using (DatabaseConnection dbConnection = new DatabaseConnection())
             {
-                conn.Open();
+                var conn = dbConnection.GetConnection();
 
                 string sql = @"INSERT INTO mensagens (cham_id, remetente_id, mensagem) 
                                VALUES (@chamId, @remetenteId, @mensagem)";
@@ -104,9 +104,9 @@ namespace Suporte_TI.Forms
 
             if (resultado == DialogResult.Yes)
             {
-                using (var conn = new NpgsqlConnection(connStr))
+                using (DatabaseConnection dbConnection = new DatabaseConnection())
                 {
-                    conn.Open();
+                    var conn = dbConnection.GetConnection();
 
                     string sql = @"UPDATE chamados 
                            SET cham_status = 'FECHADO', cham_data_fechamento = @data 
@@ -121,7 +121,7 @@ namespace Suporte_TI.Forms
                 }
 
                 MessageBox.Show("Chamado fechado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); // Fecha o formulário do chat
+                this.Close(); 
             }
         }
     }

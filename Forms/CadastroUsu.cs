@@ -21,12 +21,10 @@ namespace Suporte_TI.Forms
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            // Preenche o ComboBox com os tipos de usuário
             cbTipoUsuario.Items.Add("Usuário Normal");
             cbTipoUsuario.Items.Add("Administrador");
-            // ... adicione outros conforme necessário
 
-            cbTipoUsuario.SelectedIndex = 0; // Seleciona o primeiro item por padrão
+            cbTipoUsuario.SelectedIndex = 0; 
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -73,7 +71,7 @@ namespace Suporte_TI.Forms
                 };
                 foreach (var param in parametros)
                 {
-                    if (param.Value.Length > 50) // Ajuste conforme seus limites
+                    if (param.Value.Length > 50)
                     {
                         MessageBox.Show($"{param.Key} excede tamanho máximo: {param.Value.Length} caracteres");
                         return;
@@ -133,9 +131,9 @@ namespace Suporte_TI.Forms
                     }
                 }
             }
-            catch (PostgresException ex) // Use PostgresException em vez de NpgsqlException
+            catch (PostgresException ex)
             {
-                if (ex.SqlState == "23505") // Código para violação de unique constraint
+                if (ex.SqlState == "23505")
                 {
                     MessageBox.Show("E-mail ou CPF já cadastrado no sistema!");
                 }
@@ -146,7 +144,6 @@ namespace Suporte_TI.Forms
             }
 
         }
-        //Métodos Auxiliares
         private void LimparCampos()
         {
             txtNome.Clear();
@@ -155,7 +152,6 @@ namespace Suporte_TI.Forms
             txtCPF.Clear();
             txtTelefone.Clear();
             txtEndereco.Clear();
-            //dtpDataNasc.Value = DateTime.Today.AddYears(-18);
             rbMasculino.Checked = true;
             cbTipoUsuario.SelectedIndex = 0;
         }
@@ -169,7 +165,6 @@ namespace Suporte_TI.Forms
         }
         private string FormatCPF(string cpf)
         {
-            // Remove caracteres não numéricos
             return new string(cpf.Where(char.IsDigit).ToArray());
         }
 
@@ -178,7 +173,7 @@ namespace Suporte_TI.Forms
             if (txtNome.Text.Contains(" "))
             {
                 MessageBox.Show("Não são permitidos espaços neste campo!");
-                txtNome.Text = txtNome.Text.Replace(" ", ""); // Remove espaços
+                txtNome.Text = txtNome.Text.Replace(" ", "");
             }
         }
 
@@ -192,7 +187,7 @@ namespace Suporte_TI.Forms
                 out DateTime dataNascimento))
             {
                 MessageBox.Show("Data inválida! Use o formato DD/MM/AAAA.");
-                e.Cancel = true; // Mantém o foco no campo até corrigir
+                e.Cancel = true;
             }
             else if (dataNascimento > DateTime.Today)
             {
@@ -210,11 +205,10 @@ namespace Suporte_TI.Forms
         {
             string endereco = txtEndereco.Text.Trim();
 
-            // Verifica se o endereço não está vazio e se contém pelo menos uma letra
             if (string.IsNullOrEmpty(endereco) || !endereco.Any(char.IsLetter))
             {
                 MessageBox.Show("Endereço inválido! Deve conter pelo menos uma letra.");
-                e.Cancel = true; // Mantém o foco no campo até corrigir
+                e.Cancel = true;
             }
         }
     }

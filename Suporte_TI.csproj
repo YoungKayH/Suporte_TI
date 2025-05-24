@@ -96,6 +96,12 @@
     <Compile Include="Forms\CadastroUsu.Designer.cs">
       <DependentUpon>CadastroUsu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CartaoChamado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CartaoChamado.Designer.cs">
+      <DependentUpon>CartaoChamado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChamadoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\CadastroUsu.resx">
       <DependentUpon>CadastroUsu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CartaoChamado.resx">
+      <DependentUpon>CartaoChamado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChamadoForm.resx">
       <DependentUpon>ChamadoForm.cs</DependentUpon>

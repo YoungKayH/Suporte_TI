@@ -56,8 +56,11 @@ namespace Suporte_TI.Forms
                            // string prioridade = reader.GetString(4);
                             string prioridade = reader.GetString(4).Trim();
 
+                            var cartao = new CartaoChamado();
+                            cartao.ConfigurarChamado(id, data, detalhe, prioridade);
+                            cartao.BotaoAbrirClicado += (s, e) => AbrirChat(id);
 
-                            flowLayoutChamados.Controls.Add(CriarCartaoChamado(id, data, detalhe, status, prioridade));
+                            flowLayoutChamados.Controls.Add(cartao);
                         }
                         if (!temChamados)
                         {
@@ -76,67 +79,17 @@ namespace Suporte_TI.Forms
                 }
             }
         }
-
-        private Panel CriarCartaoChamado(int id, DateTime data, string detalhe, string status, string prioridade)
+        private void AbrirChat(int idChamado)
         {
-            var panel = new Panel
-            {
-                Width = 500,
-                Height = 120,
-                BorderStyle = BorderStyle.FixedSingle,
-                BackColor = Color.White,
-                Margin = new Padding(10)
-            };
+            ChatChamado chatForm = new ChatChamado(idChamado);
+            chatForm.TopLevel = false;
+            chatForm.FormBorderStyle = FormBorderStyle.None;
+            chatForm.Dock = DockStyle.Fill;
 
-            var lblId = new Label
-            {
-                Text = $"Chamado #{id} - {data:dd/MM/yyyy}",
-                Font = new Font("Segoe UI", 10, FontStyle.Bold),
-                Location = new Point(10, 10),
-                AutoSize = true
-            };
-
-            var lblPrioridade = new Label
-            {
-                Text = $"Prioridade: {prioridade}",
-                Font = new Font("Segoe UI", 9, FontStyle.Italic),
-                ForeColor = Color.DarkRed,
-                Location = new Point(10, 30),
-                AutoSize = true
-            };
-
-            var lblDetalhe = new Label
-            {
-                Text = detalhe.Length > 100 ? detalhe.Substring(0, 100) + "..." : detalhe,
-                Location = new Point(10, 50),
-                Size = new Size(350, 40)
-            };
-
-            var btnAbrir = new Button
-            {
-                Text = "Abrir Chat",
-                Location = new Point(370, 40),
-                Size = new Size(100, 30)
-            };
-            btnAbrir.Click += (s, e) =>
-            {
-                ChatChamado chatForm = new ChatChamado(id);
-                chatForm.TopLevel = false;
-                chatForm.FormBorderStyle = FormBorderStyle.None;
-                chatForm.Dock = DockStyle.Fill;
-
-                var parentForm = this.Parent as Panel;
-                parentForm.Controls.Clear();
-                parentForm.Controls.Add(chatForm);
-                chatForm.Show();
-            };
-
-            panel.Controls.Add(lblId);
-            panel.Controls.Add(lblPrioridade);
-            panel.Controls.Add(lblDetalhe);
-            panel.Controls.Add(btnAbrir);
-
-            return panel;
+            var parentForm = this.Parent as Panel;
+            parentForm?.Controls.Clear();
+            parentForm?.Controls.Add(chatForm);
+            chatForm.Show();
         }
 
         private void flowLayoutChamados_Paint(object sender, PaintEventArgs e)

@@ -37,6 +37,7 @@
             this.flowLayoutChamados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutChamados.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutChamados.Name = "flowLayoutChamados";
+            this.flowLayoutChamados.Padding = new System.Windows.Forms.Padding(20);
             this.flowLayoutChamados.Size = new System.Drawing.Size(800, 450);
             this.flowLayoutChamados.TabIndex = 0;
             this.flowLayoutChamados.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutChamados_Paint);
