@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using Suporte_TI.Data;
+using Suporte_TI.Repositories;
 using Suporte_TI.Models;
 using System;
 using System.Collections.Generic;
@@ -50,17 +51,18 @@ namespace Suporte_TI.Forms
             };
 
             try
-            {
-                // Validações básicas
-                if (string.IsNullOrWhiteSpace(txtNome.Text) ||
-                    string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                    string.IsNullOrWhiteSpace(txtSenha.Text) ||
-                    string.IsNullOrWhiteSpace(txtCPF.Text))
-                {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
-                    return;
-                }
+			{
+				// Validações básicas
+				if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+					string.IsNullOrWhiteSpace(txtEmail.Text) ||
+					string.IsNullOrWhiteSpace(txtSenha.Text) ||
+					string.IsNullOrWhiteSpace(txtCPF.Text))
+				{
+					MessageBox.Show("Preencha todos os campos obrigatórios!");
+					return;
+				}
 
+<<<<<<< HEAD
                 var parametros = new Dictionary<string, string>
                 {
                     {"@telefone", novoUsuario.telefone},
@@ -77,13 +79,30 @@ namespace Suporte_TI.Forms
                         return;
                     }
                 }
+=======
+				var parametros = new Dictionary<string, string>
+				{
+					{"@telefone", novoUsuario.telefone},
+					{"@cpf", novoUsuario.cpf},
+					{"@endereco", novoUsuario.endereco},
+					{"@nome", novoUsuario.nome},
+					{"@email", novoUsuario.email}
+				};
+				foreach (var param in parametros)
+				{
+					if (param.Value.Length > 50) 
+					{
+						MessageBox.Show($"{param.Key} excede tamanho máximo: {param.Value.Length} caracteres");
+						return;
+					}
+				}
+>>>>>>> 48afb0100e1858ded14fd458c6e4d92707b6621c
 
-                // Cadastrar no banco
-                using (DatabaseConnection dbConnection = new DatabaseConnection())
-                {
-                    var conexao = dbConnection.GetConnection();
-                    Console.WriteLine("Conexão estabelecida com sucesso!");
+				// Agora usamos o repositório
+				var repo = new UsuarioRepository();
+				repo.Create(novoUsuario);
 
+<<<<<<< HEAD
                     string sql = @"INSERT INTO USUARIOS (
                         USU_NOME, USU_SENHA, USU_EMAIL, USU_CPF, 
                         USU_TELEFONE, USU_ENDERECO, USU_DATANASC, 
@@ -144,6 +163,28 @@ namespace Suporte_TI.Forms
             }
 
         }
+=======
+				MessageBox.Show("Usuário cadastrado com sucesso!");
+				LimparCampos();
+			}
+			catch (PostgresException ex)
+			{
+				if (ex.SqlState == "23505")
+				{
+					MessageBox.Show("E-mail ou CPF já cadastrado no sistema!");
+				}
+				else
+				{
+					MessageBox.Show($"Erro no banco de dados ({ex.SqlState}): {ex.Message}");
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}");
+			}
+		}
+        //Métodos Auxiliares
+>>>>>>> 48afb0100e1858ded14fd458c6e4d92707b6621c
         private void LimparCampos()
         {
             txtNome.Clear();
