@@ -25,7 +25,7 @@ namespace Suporte_TI.Forms
             cbTipoUsuario.Items.Add("Usuário Normal");
             cbTipoUsuario.Items.Add("Administrador");
 
-            cbTipoUsuario.SelectedIndex = 0; 
+            cbTipoUsuario.SelectedIndex = 0;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -51,18 +51,16 @@ namespace Suporte_TI.Forms
             };
 
             try
-			{
-				// Validações básicas
-				if (string.IsNullOrWhiteSpace(txtNome.Text) ||
-					string.IsNullOrWhiteSpace(txtEmail.Text) ||
-					string.IsNullOrWhiteSpace(txtSenha.Text) ||
-					string.IsNullOrWhiteSpace(txtCPF.Text))
-				{
-					MessageBox.Show("Preencha todos os campos obrigatórios!");
-					return;
-				}
+            {
+                if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+                    string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                    string.IsNullOrWhiteSpace(txtSenha.Text) ||
+                    string.IsNullOrWhiteSpace(txtCPF.Text))
+                {
+                    MessageBox.Show("Preencha todos os campos obrigatórios!");
+                    return;
+                }
 
-<<<<<<< HEAD
                 var parametros = new Dictionary<string, string>
                 {
                     {"@telefone", novoUsuario.telefone},
@@ -71,6 +69,7 @@ namespace Suporte_TI.Forms
                     {"@nome", novoUsuario.nome},
                     {"@email", novoUsuario.email}
                 };
+
                 foreach (var param in parametros)
                 {
                     if (param.Value.Length > 50)
@@ -79,76 +78,13 @@ namespace Suporte_TI.Forms
                         return;
                     }
                 }
-=======
-				var parametros = new Dictionary<string, string>
-				{
-					{"@telefone", novoUsuario.telefone},
-					{"@cpf", novoUsuario.cpf},
-					{"@endereco", novoUsuario.endereco},
-					{"@nome", novoUsuario.nome},
-					{"@email", novoUsuario.email}
-				};
-				foreach (var param in parametros)
-				{
-					if (param.Value.Length > 50) 
-					{
-						MessageBox.Show($"{param.Key} excede tamanho máximo: {param.Value.Length} caracteres");
-						return;
-					}
-				}
->>>>>>> 48afb0100e1858ded14fd458c6e4d92707b6621c
 
-				// Agora usamos o repositório
-				var repo = new UsuarioRepository();
-				repo.Create(novoUsuario);
+                // Salvar usando o repositório
+                var repo = new UsuarioRepository();
+                repo.Create(novoUsuario);
 
-<<<<<<< HEAD
-                    string sql = @"INSERT INTO USUARIOS (
-                        USU_NOME, USU_SENHA, USU_EMAIL, USU_CPF, 
-                        USU_TELEFONE, USU_ENDERECO, USU_DATANASC, 
-                        USU_SEXO, USU_STATUS, TIPO_ID)
-                       VALUES (
-                        @nome, @senha, @email, @cpf, 
-                        @telefone, @endereco, @dataNasc, 
-                        @sexo, 'S', @tipoId)";
-
-                    using (var cmd = new NpgsqlCommand(sql, conexao))
-                    {
-                        cmd.Parameters.AddWithValue("nome", novoUsuario.nome);
-                        cmd.Parameters.AddWithValue("senha", novoUsuario.senha);
-                        cmd.Parameters.AddWithValue("email", novoUsuario.email);
-                        cmd.Parameters.AddWithValue("cpf", novoUsuario.cpf);
-                        cmd.Parameters.AddWithValue("telefone", novoUsuario.telefone);
-                        cmd.Parameters.AddWithValue("endereco", novoUsuario.endereco);
-                        cmd.Parameters.AddWithValue("dataNasc", novoUsuario.dataNascimento);
-                        cmd.Parameters.AddWithValue("sexo", novoUsuario.sexo);
-                        cmd.Parameters.AddWithValue("tipoId", novoUsuario.tipoId);
-
-                        // TESTES
-
-                        //Console.WriteLine($"Nome: {nome}");
-                        //Console.WriteLine($"Email: {email}");
-                        //Console.WriteLine($"Senha: {senha}");
-                        //Console.WriteLine($"CPF: {cpf}");
-                        //Console.WriteLine($"Telefone: {telefone}");
-                        //Console.WriteLine($"Endereço: {endereco}");
-                        //Console.WriteLine($"Data Nasc: {dataNasc}");
-                        //Console.WriteLine($"Sexo: {sexo}");
-                        //Console.WriteLine($"TipoId: {tipoId}");
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Usuário cadastrado com sucesso!");
-                            LimparCampos();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Falha ao cadastrar usuário.");
-                        }
-                    }
-                }
+                MessageBox.Show("Usuário cadastrado com sucesso!");
+                LimparCampos();
             }
             catch (PostgresException ex)
             {
@@ -161,30 +97,11 @@ namespace Suporte_TI.Forms
                     MessageBox.Show($"Erro no banco de dados ({ex.SqlState}): {ex.Message}");
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}");
+            }
         }
-=======
-				MessageBox.Show("Usuário cadastrado com sucesso!");
-				LimparCampos();
-			}
-			catch (PostgresException ex)
-			{
-				if (ex.SqlState == "23505")
-				{
-					MessageBox.Show("E-mail ou CPF já cadastrado no sistema!");
-				}
-				else
-				{
-					MessageBox.Show($"Erro no banco de dados ({ex.SqlState}): {ex.Message}");
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}");
-			}
-		}
-        //Métodos Auxiliares
->>>>>>> 48afb0100e1858ded14fd458c6e4d92707b6621c
         private void LimparCampos()
         {
             txtNome.Clear();

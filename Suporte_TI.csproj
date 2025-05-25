@@ -155,6 +155,7 @@
     <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioRepository.cs" />
     <EmbeddedResource Include="Forms\CadastroUsu.resx">
       <DependentUpon>CadastroUsu.cs</DependentUpon>
     </EmbeddedResource>

@@ -63,6 +63,7 @@ namespace Suporte_TI
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             CadastroUsu cad = new CadastroUsu();
             cad.Show();
             this.Hide(); // ou this.Close() se quiser fechar    
