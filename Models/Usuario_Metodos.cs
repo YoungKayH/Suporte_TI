@@ -8,7 +8,7 @@ namespace Suporte_TI.Models
 {
     public class Usuario_Metodos
     {
-        public void Create(Usuario usuario)
+        public bool Create(Usuario usuario)
         {
             var db = new DatabaseConnection();
             var query = @"
@@ -28,6 +28,44 @@ namespace Suporte_TI.Models
             cmd.Parameters.AddWithValue("@status", usuario.status);
 
             cmd.ExecuteNonQuery();
+            return true; 
+        }
+
+        public Usuario Autenticar(string email, string senha)
+        {
+            var db = new DatabaseConnection();
+            var query = @"
+        SELECT usu_id, usu_nome, usu_email, usu_senha, tipo_id, usu_cpf, 
+               usu_telefone, usu_endereco, usu_datanasc, usu_sexo, usu_status
+        FROM usuarios 
+        WHERE usu_email = @email AND usu_senha = @senha";
+
+            var cmd = new NpgsqlCommand(query, db.GetConnection());
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@senha", senha);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    return new Usuario
+                    {
+                        Id = reader.GetInt32(reader.GetOrdinal("usu_id")),
+                        nome = reader.GetString(reader.GetOrdinal("usu_nome")),
+                        email = reader.GetString(reader.GetOrdinal("usu_email")),
+                        senha = reader.GetString(reader.GetOrdinal("usu_senha")),
+                        tipoId = reader.GetInt32(reader.GetOrdinal("tipo_id")),
+                        cpf = reader.GetString(reader.GetOrdinal("usu_cpf")),
+                        telefone = reader.GetString(reader.GetOrdinal("usu_telefone")),
+                        endereco = reader.GetString(reader.GetOrdinal("usu_endereco")),
+                        dataNascimento = reader.GetDateTime(reader.GetOrdinal("usu_datanasc")),
+                        sexo = reader.GetString(reader.GetOrdinal("usu_sexo")),
+                        status = reader.GetString(reader.GetOrdinal("usu_status"))
+                    };
+                }
+            }
+
+            return null;
         }
 
         public List<Usuario> ReadAll()

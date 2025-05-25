@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\kaka2\\source\\repos\\Suporte_TI\\Suporte_TI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|c:\\users\\kaka2\\source\\repos\\suporte_ti\\suporte_ti\\models\\usuario_metodos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:models\\usuario_metodos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|c:\\users\\kaka2\\source\\repos\\suporte_ti\\suporte_ti\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E50A9B71-E801-44F1-8AAC-ECE69A0D5266}|Suporte_TI.csproj|solutionrelative:forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,19 +18,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Usuario_Metodos.cs",
+              "DocumentMoniker": "C:\\Users\\kaka2\\source\\repos\\Suporte_TI\\Suporte_TI\\Models\\Usuario_Metodos.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario_Metodos.cs",
+              "ToolTip": "C:\\Users\\kaka2\\source\\repos\\Suporte_TI\\Suporte_TI\\Models\\Usuario_Metodos.cs",
+              "RelativeToolTip": "Models\\Usuario_Metodos.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAYwH8AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T19:49:53.741Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\kaka2\\source\\repos\\Suporte_TI\\Suporte_TI\\Forms\\Form1.cs",
               "RelativeDocumentMoniker": "Forms\\Form1.cs",
