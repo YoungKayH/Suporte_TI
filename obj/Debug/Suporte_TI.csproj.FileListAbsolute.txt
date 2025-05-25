@@ -45,3 +45,4 @@ C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.exe
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.pdb
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\bin\Debug\Suporte_TI.pdb
 C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.CartaoChamado.resources
+C:\Users\kaka2\source\repos\Suporte_TI\Suporte_TI\obj\Debug\Suporte_TI.Forms.deletarUsu.resources

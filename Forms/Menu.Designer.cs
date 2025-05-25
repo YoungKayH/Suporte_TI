@@ -76,11 +76,11 @@
             // 
             // btnCadastro
             // 
-            this.btnCadastro.Location = new System.Drawing.Point(35, 15);
+            this.btnCadastro.Location = new System.Drawing.Point(8, 12);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(202, 51);
             this.btnCadastro.TabIndex = 0;
-            this.btnCadastro.Text = "Cadastro";
+            this.btnCadastro.Text = "Deletar usuario";
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Visible = false;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
@@ -167,7 +167,7 @@
             this.btnPainel.Name = "btnPainel";
             this.btnPainel.Size = new System.Drawing.Size(260, 89);
             this.btnPainel.TabIndex = 0;
-            this.btnPainel.Text = "Painel";
+            this.btnPainel.Text = "Deletar Usuarios";
             this.btnPainel.UseVisualStyleBackColor = true;
             this.btnPainel.Click += new System.EventHandler(this.btnPainel_Click);
             // 

@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -114,6 +115,12 @@
     <Compile Include="Forms\ChatChamado.Designer.cs">
       <DependentUpon>ChatChamado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\deletarUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\deletarUsu.Designer.cs">
+      <DependentUpon>deletarUsu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\IAForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,7 +162,7 @@
     <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuarioRepository.cs" />
+    <Compile Include="Models\Usuario_Metodos.cs" />
     <EmbeddedResource Include="Forms\CadastroUsu.resx">
       <DependentUpon>CadastroUsu.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChatChamado.resx">
       <DependentUpon>ChatChamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\deletarUsu.resx">
+      <DependentUpon>deletarUsu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IAForm.resx">
       <DependentUpon>IAForm.cs</DependentUpon>

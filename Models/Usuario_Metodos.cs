@@ -4,9 +4,9 @@ using Suporte_TI.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Suporte_TI.Repositories
+namespace Suporte_TI.Models
 {
-    public class UsuarioRepository
+    public class Usuario_Metodos
     {
         public void Create(Usuario usuario)
         {
@@ -34,7 +34,7 @@ namespace Suporte_TI.Repositories
         {
             var usuarios = new List<Usuario>();
             var db = new DatabaseConnection();
-            var query = "SELECT * FROM usuarios WHERE status = 'S';";
+            var query = "SELECT * FROM usuarios";
 
             var cmd = new NpgsqlCommand(query, db.GetConnection());
             var reader = cmd.ExecuteReader();
@@ -60,7 +60,7 @@ namespace Suporte_TI.Repositories
             return usuarios;
         }
 
-        public void Update(Usuario usuario)
+        public void Update(Usuario usuario) //Nâo Utilizado ainda
         {
             var db = new DatabaseConnection();
             var query = @"
@@ -75,7 +75,7 @@ namespace Suporte_TI.Repositories
                     usu_datanasc = @dataNascimento,
                     usu_sexo = @sexo,
                     usu_status = @status
-                WHERE id = @id;";
+                WHERE usu_id = @id;";
 
             var cmd = new NpgsqlCommand(query, db.GetConnection());
             cmd.Parameters.AddWithValue("@id", usuario.Id);
@@ -92,25 +92,47 @@ namespace Suporte_TI.Repositories
 
             cmd.ExecuteNonQuery();
         }
-
-        public void ChangeStatus(int id)
-        {
-            var db = new DatabaseConnection();
-            var query = "UPDATE usuarios SET status = 'N' WHERE id = @id;";
-
-            var cmd = new NpgsqlCommand(query, db.GetConnection());
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
-        }
 		
 		public void ExclusaoUsuario(int id)
 		{
-			var db = new DatabaseConnection();
-			var query = "DELETE FROM usuarios WHERE id = @id";
-			
-			var cmd = new NpgsqlCommand(query, db.GetConnection());
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
-		}
+            var db = new DatabaseConnection();
+
+            try
+            {
+                var deleteInteracoes = new NpgsqlCommand("DELETE FROM interacoes_chamado WHERE usu_id = @id", db.GetConnection());
+                deleteInteracoes.Parameters.AddWithValue("@id", id);
+                deleteInteracoes.ExecuteNonQuery();
+
+                var buscarChamados = new NpgsqlCommand("SELECT cham_id FROM chamados WHERE usu_id = @id", db.GetConnection());
+                buscarChamados.Parameters.AddWithValue("@id", id);
+                var reader = buscarChamados.ExecuteReader();
+
+                List<int> chamadosIds = new List<int>();
+                while (reader.Read())
+                {
+                    chamadosIds.Add(reader.GetInt32(0));
+                }
+                reader.Close();
+
+                foreach (var chamId in chamadosIds)
+                {
+                    var deleteMensagens = new NpgsqlCommand("DELETE FROM mensagens WHERE cham_id = @chamId", db.GetConnection());
+                    deleteMensagens.Parameters.AddWithValue("@chamId", chamId);
+                    deleteMensagens.ExecuteNonQuery();
+                }
+
+                var deleteChamados = new NpgsqlCommand("DELETE FROM chamados WHERE usu_id = @id", db.GetConnection());
+                deleteChamados.Parameters.AddWithValue("@id", id);
+                deleteChamados.ExecuteNonQuery();
+
+                var deleteUsuario = new NpgsqlCommand("DELETE FROM usuarios WHERE usu_id = @id", db.GetConnection());
+                deleteUsuario.Parameters.AddWithValue("@id", id);
+                deleteUsuario.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao excluir usuário: " + ex.Message);
+            }
+        }
     }
 }

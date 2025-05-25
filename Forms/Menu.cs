@@ -32,7 +32,7 @@ namespace Suporte_TI
         
         private void btnPainel_Click(object sender, EventArgs e)
         {
-            AbrirFormularioFilho(new Painel());
+            AbrirFormularioFilho(new deletarUsu());
         }
         private void AbrirFormularioFilho(Form formularioFilho)
         {
@@ -63,8 +63,8 @@ namespace Suporte_TI
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            CadastroUsu cad = new CadastroUsu();
+           // this.Visible = true;
+            deletarUsu cad = new deletarUsu();
             cad.Show();
             this.Hide(); // ou this.Close() se quiser fechar    
         }

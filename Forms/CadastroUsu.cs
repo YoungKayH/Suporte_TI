@@ -1,6 +1,5 @@
 ﻿using Npgsql;
 using Suporte_TI.Data;
-using Suporte_TI.Repositories;
 using Suporte_TI.Models;
 using System;
 using System.Collections.Generic;
@@ -80,7 +79,7 @@ namespace Suporte_TI.Forms
                 }
 
                 // Salvar usando o repositório
-                var repo = new UsuarioRepository();
+                var repo = new Usuario_Metodos();
                 repo.Create(novoUsuario);
 
                 MessageBox.Show("Usuário cadastrado com sucesso!");
